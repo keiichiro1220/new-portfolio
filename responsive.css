@@ -1,0 +1,223 @@
+/* iPad portrait */
+@media (min-width: 992px) and (max-width: 1200px) {
+	/* 共通 */
+	/* nav */
+	nav.navbar {
+		padding: 0 2%;
+		height: 8vh;
+	}
+  .navbar-nav .nav-link {
+    color: white;
+    font-size: 1.5rem;
+    padding: 0;
+  }
+	.h1.navbar-brand {
+		font-size: 2rem;
+	}
+	.header h1 {
+		font-size: 3.5rem;
+	}
+	.header h2 {
+		font-size: 2rem;
+	}
+	/* profile */
+	.profile-p {
+		font-size: 0.8rem;
+		margin-bottom: 3%;
+	}
+	.service-p {
+		font-size: 1rem;
+	}
+	/* works */
+	.row.sample-row img {
+		width: 100%;
+		height: 20vh;
+	}
+}
+@media (min-width: 769px) and (max-width: 991.98px) {
+	/* nav */
+	span.navbar-toggler-icon {
+		color: white;
+	}
+	#navbarNav {
+		background-color: #000;
+		opacity: 0.7;
+	}
+	button:focus {
+		outline: 0px;
+	}
+	ul.navbar-nav {
+		padding-right: 0;
+	}
+	li.nav-item {
+		padding: 3.1% 0;
+    border: 1px solid #fff;
+    margin-right: 0;
+		padding-left: 5%;
+	}
+	/* header */
+	.header h1 {
+		font-size: 3rem;
+		font-family: "Roboto Slab", serif;
+		color: white;
+	}
+	.header h2 {
+		font-size: 2.5rem;
+		color: white;
+	}
+
+	/* profile */
+	.profile-p {
+		margin-bottom: 5%;
+	}
+	.profile-sub-content {
+		display: flex;
+	}
+	/* service */
+	/* works */
+	.row.sample-row img {
+		width: 100%;
+		height: 20vh;
+	}
+}
+@media (min-width: 485px) and (max-width: 768px) {
+	#navbarNav {
+		background-color: #000;
+		opacity: 0.7;
+	}
+	h1.navbar-brand {
+		padding-left: 5%;
+	}
+	li.nav-item {
+		padding: 2.5% 0;
+    border: 1px solid #fff;
+    margin-right: 0;
+		padding-left: 5%;
+	}
+	ul.navbar-nav {
+		padding-right: 0;
+	}
+	span.navbar-toggler-icon {
+		vertical-align: baseline;
+	}
+	.navbar-toggler {
+		padding: 1rem 1.5rem;
+	}
+	/* header */
+	.header h1 {
+		font-size: 2.5rem;
+		font-family: "Roboto Slab", serif;
+		color: white;
+		padding-top: 3rem;
+	}
+	.header h2 {
+		font-size: 2rem;
+		color: white;
+	}
+	/* profile */
+	.profile-info {
+		padding: 20px;
+	}
+	.profile-p {
+		font-size: 15px;
+	}
+	.profile-sub-content {
+		display: flex;
+	}
+	/* service */
+	.service-p {
+		font-size: 1rem;
+	}
+	/* works */
+	.row.sample-row img {
+		height: 20vh;
+	}
+}
+@media (max-width: 575.98px) {
+	/* 共通 */
+	.profile-h, .skill-h, .service-h, .sample-h, .contact-h {
+		font-size: 2rem;
+	}
+	/* nav */
+	nav.navbar {
+    background-color: #01579b;
+    height: 6vh;
+	}
+	h1.navbar-brand {
+		padding-left: 5%;
+		font-size: 1.2rem;
+		line-height: 5vh;
+	}
+	span.navbar-toggler-icon {
+		vertical-align: baseline;
+	}
+	#navbarNav {
+		background-color: #000;
+		opacity: 0.7;
+	}
+	i.fa-2x {
+		font-size: 1em;
+		vertical-align: middle;
+	}
+	li.nav-item {
+		padding: 2.5% 0;
+    border: 1px solid #fff;
+    margin-right: 0;
+		padding-left: 5%;
+	}
+	.navbar-nav .nav-link {
+		font-size: 1rem;
+	}
+	ul.navbar-nav {
+		padding-right: 0;
+	}
+	.header h1 {
+		font-size: 1.5rem;
+		font-family: "Roboto Slab", serif;
+		color: white;
+		letter-spacing: 7;
+		margin-bottom: 3%;
+	}
+	.header h2 {
+		font-size: 1rem;
+		color: white;
+	}	
+	/* profile */
+	.profile-img {
+		height: auto;
+		width: 100%;
+	}
+	.profile-name, .slogan-ttl, .account-ttl {
+		font-size: 1.2rem;
+	}
+	.profile-p {
+		font-size: 0.5rem;
+		margin-bottom: 5%;
+	}
+	.slogan-lead {
+		font-size: 0.5rem;
+	}
+	.profile-sub-content {
+		display: flex;
+	}
+	
+	/* skill */
+	.skill-p {
+		font-size: 1rem;
+	}
+	/* service */
+	.service-p {
+		font-size: 1rem;
+	}
+	/* works */
+	.row.sample-row img {
+		height: 20vh;
+	}
+	/* contact */
+	.contact-lead {
+		font-size: 0.8rem;
+	}
+	.label {
+		font-size: 1rem;
+	}
+}
