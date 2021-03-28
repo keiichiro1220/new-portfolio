@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.header {
+  background-image: url(../img/bg-main_visual.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 0;
+  padding-top: 40%;
+  position: relative;
+}
+
+.header .header-logo {
+  position: absolute;
+  top: 77%;
+  left: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.top-wrapper {
+  text-align: center;
+  background-color: #FFFFF3;
+}
+
+.top-wrapper .top-container {
+  width: 45%;
+  padding: 10% 0;
+  margin: 0 auto;
+}
+
+.top-wrapper .top-container .top-title {
+  margin: 0;
+  margin-bottom: 8%;
+  font-size: 3vw;
+}
+
+.top-wrapper .top-container .top-text {
+  margin: 0;
+  font-size: 1.6vw;
+}
+
+.main-wrapper {
+  background-image: url(../img/bg-content.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 0;
+  padding-top: 151.2%;
+  position: relative;
+}
+
+.main-wrapper .main-title {
+  position: absolute;
+  color: white;
+  margin: 0;
+  top: 8%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  letter-spacing: 0.1em;
+}
+
+.main-wrapper .design-wrapper {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 95%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 120%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.main-wrapper .design-wrapper .design-container {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 89%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 29%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FFFFF3;
+}
+
+.main-wrapper .design-wrapper .design-container .image1 {
+  width: 50%;
+  position: absolute;
+  margin: 0;
+  top: 0;
+}
+
+.main-wrapper .design-wrapper .design-container .image1-text {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 2%;
+  line-height: 1.8;
+}
+
+.main-wrapper .design-wrapper .design2-container {
+  position: absolute;
+  top: 39%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 89%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 29%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FFFFF3;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.main-wrapper .design-wrapper .design2-container .image2 {
+  width: 50%;
+  position: absolute;
+  margin: 0;
+  top: 0;
+}
+
+.main-wrapper .design-wrapper .design2-container .image2-text {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2%;
+  line-height: 1.8;
+}
+
+.main-wrapper .design-wrapper .design3-container {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 89%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 29%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FFFFF3;
+}
+
+.main-wrapper .design-wrapper .design3-container .image3 {
+  width: 50%;
+  position: absolute;
+  margin: 0;
+  top: 0;
+}
+
+.main-wrapper .design-wrapper .design3-container .image3-text {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 2%;
+  line-height: 1.8;
+}
+
+.main-wrapper .design-wrapper .design4-container {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 89%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 29%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #FFFFF3;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.main-wrapper .design-wrapper .design4-container .image4 {
+  width: 50%;
+  position: absolute;
+  margin: 0;
+  top: 0;
+}
+
+.main-wrapper .design-wrapper .design4-container .image4-text {
+  width: 45%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2%;
+  line-height: 1.8;
+}
+
+.company-wrapper {
+  background-color: #FFFFF3;
+}
+
+.company-wrapper .company-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.company-wrapper .company-container .company-title {
+  margin: 0;
+  padding: 8% 0 4%;
+}
+
+.company-wrapper .company-container .company-text {
+  margin: 0;
+  font-size: 1.6vw;
+}
+
+.company-wrapper .company-container .company-logo {
+  width: 80%;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin: 5% auto 8%;
+  list-style-type: none;
+}
+
+.company-wrapper .company-container .company-logo .logo-list {
+  width: 20%;
+  position: relative;
+  height: auto;
+  padding-top: 15%;
+  border-radius: 50%;
+  background: #000;
+  background-color: #5BC0EB;
+}
+
+.company-wrapper .company-container .company-logo .logo-list .logo-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5vw;
+}
+
+.company-wrapper .company-container .company-logo .list2 {
+  background-color: #FDE74C;
+}
+
+.company-wrapper .company-container .company-logo .list3 {
+  background-color: #72C44F;
+}
+
+.company-wrapper .company-container .company-logo .list4 {
+  background-color: #E55934;
+}
+
+.footer {
+  background-color: black;
+  text-align: center;
+  color: white;
+  padding: 2% 0;
+  font-size: 1.2vw;
+  text-align: right;
+}
+
+.footer .contact {
+  color: white;
+  margin-left: 18%;
+  border-bottom: 1px solid white;
+}
+
+.footer .privacy {
+  color: white;
+  margin: 0 2%;
+  border-bottom: 1px solid white;
+}
+/*# sourceMappingURL=style.css.map */
