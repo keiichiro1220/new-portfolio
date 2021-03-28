@@ -1,0 +1,166 @@
+h1, h2, h3, ul, li {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+body {
+  margin: 0;
+  color: #666666;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;;
+}
+header {
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.logo {
+  width: 400px;
+  margin: 40px auto;
+}
+.mainimg {
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+nav ul li {
+  list-style-type: none;
+  display: inline;
+}
+nav {
+  text-align: center;
+  margin-bottom: 40px;
+}
+nav li a {
+  padding: 0 35px;
+  text-decoration: none;
+  color: #666666;
+}
+nav li a:hover {
+  border-bottom: 4px solid #d08047;
+  color: #d08047;
+}
+h2 {
+  color: #fff;
+  background: #d08047;
+  border-radius: 10px;
+  padding: 15px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+section ul {
+  list-style-type: none;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+.date {
+  margin: 0 20px 0 15px;
+}
+h3 {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  color: #666666;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+p {
+  padding: 0 20px;
+  line-height: 2;
+}
+.point {
+  color: #d08047;
+}
+a {
+  color: #666;
+}
+footer {
+  text-align: center;
+  font-size: 13px;
+  padding-bottom: 20px;
+  line-height: 2;
+}
+.footer-under {
+  font-size: 12px;
+}
+footer a {
+  text-decoration: none;
+}
+footer a:hover {
+  color: #d08047;
+}
+
+/* aboutページ */
+table {
+  border: 1px solid black;
+  width: 1400px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+table tr:first-child {
+  text-align: left;
+  background: #EEEEEE;
+}
+th, td {
+  border: 1px solid #666;
+}
+td {
+  padding-left: 10px;
+}
+th {
+  width: 30%;
+  padding: 15px;
+}
+.sec4-point {
+  color: #d08047;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.sec4-point-2 {
+  background: #E5E5E5;
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+.sec-point-3 {
+  color: #d08047;
+}
+
+/* Gallery */
+.gallery-contents li {
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  padding: 20px;
+}
+.gallery-contents li img {
+  width: 20%;
+  margin-right: 45px;
+  float: left;
+}
+.ga-content-text {
+  overflow: hidden;
+}
+.ga-content-text span {
+  color: #d08047;
+}
+.ga-content-text p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Link */
+.link-table-th {
+  padding: 15px 10px 0;
+}
+.link-table tr a:hover {
+  color: #d08047;
+}
+.link-footer {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}

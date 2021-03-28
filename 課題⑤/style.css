@@ -1,0 +1,581 @@
+/* 共通部 */
+body {
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+p {
+  line-height: 1.75;
+}
+.link {
+  color: #008489;
+}
+.link:hover {
+  color: #008489;
+}
+h1 {
+  color: #333;
+}
+h3, h4, h6, p {
+  color: #484848;
+}
+.host-heading, .security-heading, .credit-heading,
+.world-heading, .about-heading, .question-heading {
+  font-size: 60px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.host-heading, .security-heading, .credit-heading, 
+.world-heading, .about-heading, .question-heading {
+  position: relative;
+}
+.host-heading::before, .security-heading::before, 
+.credit-heading::before, .world-heading::before, 
+.about-heading::before, .question-heading::before {
+  position: absolute;
+  top: -15px;
+  left: 47%;
+  content: "";
+  width: 65px;
+  height: 2px;
+  background: black;
+}
+.top-ttl, .host-ttl, .credit-ttl, .about-ttl {
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 0;
+}
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+/* header */
+header {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+/* ナビゲーションメニュー */
+nav.navbar {
+  padding: 30px 0;
+}
+.nav-brand {
+  position: relative;
+  display: inline-block;
+}
+.navbar-brand {
+  padding-left: 0;
+  position: relative;
+}
+.fa-airbnb {
+  position: relative;
+  z-index: 10;
+}
+.circle {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #ffffff00;
+  transition: .5s;
+  z-index: 0;
+}
+.fa-airbnb:hover + .circle {
+  background-color: #ebebeb;
+}
+ul.navbar-nav {
+  padding-left: 20px;
+}
+.fa-airbnb, .active a, .active a:hover {
+  color: #000000;
+}
+#nav-link-top {
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+a.nav-link {
+  color: #717171;
+  font-size: 1rem;
+  font-weight: bold;
+}
+a.nav-link:hover {
+  color: #333;
+}
+button.btn-danger {
+  background-color: #DF1462;
+}
+.navbar-brand {
+  padding-left: .5rem;
+}
+.nav-item {
+  margin-right: 20px;
+}
+
+/* スクロール時のglobal-nav */
+#global-nav {
+  /* transform: translateY(-100%); */
+  display: none;
+}
+.btn-sm.btn-danger {
+  padding: 5px 15px;
+  font-size: 14px;
+}
+#global-nav.m_fixed {
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  /* transform: translateY(0); */
+  display: block;
+}
+
+/* header-image */
+.header-image {
+  background-image: url(img/airbnb_top.jpg);
+  background-size: 100%;
+  background-position: center;
+  height: 680px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+}
+/* header-form */
+.header-form {
+  background: #fff;
+  position: absolute;
+  top: 270px;
+  right: 40px;
+  width: 930px;
+  height: 480px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 5;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+}
+.header-form div:first-child{
+  width: 43%;
+  padding: 50px 0;
+  padding-left: 35px;
+}
+.header-form div:last-child{
+  width: 50%;
+  padding: 50px 30px;
+}
+/* フォーム */
+.form-left-ttl {
+  font-size: 2.625rem;
+  color: rgb(34, 34, 34);
+}
+.form-right-ttl {
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  color: #222;
+}
+.form-link {
+  display: inline-block;
+  padding: 15px 0 35px 0;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+.form-link-left {
+  text-decoration: underline;
+  padding-top: 30px;
+}
+.form-control.form-control-lg {
+  font-size: 1rem;
+  padding-left: 10px;
+}
+button.btn-danger {
+  font-size: 1.125rem;
+  font-weight: bold;
+  padding: 15px 0;
+  background-color: #D90765;
+  border-radius: 8px;
+}
+/* フォーム区分け線 */
+.verticul-line {
+  width: 1px;
+  height: 480px;
+  background-color: #ebebeb;
+}
+
+/* main */
+.form-left-main, .form-right-main, hr {
+  display: none;
+}
+/* top-section */
+.top {
+  width: 83%;
+  margin: 0 auto;
+  padding-top: 140px;
+}
+.top-row.row>div {
+  margin-right: 5rem;
+}
+.top-p {
+  padding-top: 25px;
+}
+/* host */
+.host {
+  width: 82%;
+  margin: 0 auto;
+  padding: 95px 0;
+}
+.host-heading {
+  margin-bottom: 65px;
+}
+.host-row.row>div:last-child {
+  padding-right: 0;
+  padding-left: 35px;
+}
+.host-p {
+  padding-top: 25px;
+  padding-right: 50px;
+}
+.host-p-3 {
+  padding-right: 1rem;
+}
+.fa-check-circle {
+  margin-bottom: 17px;
+}
+
+/* host-img */
+.host-jumbotron {
+  width: 82%;
+  margin: 0 auto;
+  padding: 65px 0;
+}
+.host-jumbo-p {
+  padding-right: 7rem;
+  color: #767676;
+  line-height: 1.375;
+}
+blockquote {
+  position: relative;
+  padding: 1.5em 6rem 0 0;/*要素内の余白*/
+  color: #484848;
+  font-size: 32px;
+  line-height: 1.25;
+}
+blockquote::before {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10d";
+  top: -15px;
+  left: -10px;
+  color: white;/*文字色*/
+  padding: 0.5em;/*余白*/
+  color: #FDB32B;/*背景色*/
+}
+.host-jumbo-btn {
+  width: 43%;
+  background: #fff;
+  color: #484848;
+  line-height: 1.5;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* host-2 */
+.host2 {
+  width: 82%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.host2-p {
+  color: #767676;
+  padding-right: 2rem;
+}
+.host2-row>div:last-child {
+  padding-left: 4rem;
+}
+.host2-blockquote {
+  padding-right: 1rem;
+}
+.host2-btn {
+  width: 48%;
+  background: #fff;
+  color: #484848;
+  line-height: 1.5;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+/* security */
+.security {
+  width: 84%;
+  margin: 0 auto;
+  padding: 110px 0;
+}
+.security-heading {
+  margin-bottom: 53px;
+}
+.security-content {
+  margin-bottom: 90px;
+}
+.security-p {
+  padding-right: 92px;
+  padding-top: 20px;
+}
+.security-lists {
+  padding-left: 0;
+}
+li.security-list {
+  list-style-type: none;
+  padding: 10px 0;
+}
+li.security-list::before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 12px;
+  color: #1E9297;
+}
+/* credit */
+.credit {
+  width: 83%;
+  margin: 0 auto;
+  padding: 65px 0;
+}
+.credit-heading {
+  margin-bottom: 55px;
+}
+.credit-row.row>div:last-child {
+  padding-left: 4rem;
+  padding-right: 0;
+}
+.credit-p {
+  padding: 25px 2rem 25px 0;
+  margin-bottom: 0;
+}
+.credit-p-3 {
+  padding-right: 0;
+}
+/* about */
+.about {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.about-heading {
+  margin-bottom: 57px;
+}
+.about-p {
+  padding: 1.5rem 3rem 1.5rem 0;
+  margin-bottom: 0;
+}
+/* question */
+.question {
+  width: 80%;
+  margin: 0 auto;
+  padding: 55px 0;
+}
+.question-heading {
+  margin-bottom: 65px;
+}
+.question-link {
+  font-size: 18px;
+  line-height: 1.44;
+}
+ul.list-group:last-child {
+  border-bottom: 1px solid #ccc;
+}
+li.question-list {
+  padding: 20px 0;
+}
+a.question-link:hover {
+  color: #008489;
+  text-decoration-color: #008489;
+}
+
+/* host-card */
+.host-cards {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.host-card-heading {
+  font-size: 24px;
+  line-height: 1.25;
+  color: #484848;
+  margin-bottom: 20px;
+}
+.row-16 {
+  margin-left:-8px;
+  margin-right:-8px;
+}
+.row-16 > div {
+  padding-right:8px;
+  padding-left:8px;
+}
+.host-card-content {
+  border-radius: 3px;
+}
+.host-card-content:hover {
+  text-decoration: none;
+}
+.host-card-ttl {
+  font-size: 16px;
+  line-height: 1.375;
+  font-weight: bold;
+  margin: 0;
+  color: #484848;
+  padding: 10px 0 5px 0;
+}
+.host-card-link {
+  display: block;
+}
+.host-card-p {
+  font-size: 14px;
+  line-height: 1.57;
+  margin: 0;
+  color: #484848;
+}
+span.host-card-link {
+  font-size: 14px;
+  line-height: 1.285;
+  padding: 5px 0;
+}
+
+/* Monetization */
+.Monetization {
+  width: 98.5%;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.Monetization-img {
+  background-image: url(img/dbe25d99-6821-4e02-802f-fcd7aaef85bc.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 440px;
+  margin: 0 auto;
+  position: relative;
+}
+.Monetization-box {
+  position: absolute;
+  top: 20%;
+  left: 9%;
+}
+.Monetization-img-ttl {
+  font-size: 60px;
+  width: 70%;
+  margin-bottom: 40px;
+}
+button.Monetization-img-btn {
+  font-weight: bold;
+  font-size: 15px;
+  padding: 13px 27px;
+  border-radius: 5px;
+  border: none;
+  color: #333;
+}
+
+/* footer */
+footer {
+  background: #F7F7F7;
+}
+.footer-content.row, .footer-content-bottom.row {
+  max-width: 1290px;
+  width: 87%;
+  margin: 0 auto;
+}
+.footer-content.row {
+  padding: 3rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.footer-ttl {
+  font-size: 12px;
+  color: #222;
+  font-weight: bold;
+  line-height: 1.4;
+}
+a.footer-link {
+  font-size: 14px;
+  padding: 8px 0;
+  color: #222;
+}
+a.footer-link:hover {
+  color: #484848;
+}
+
+/* footer-content-bottom */
+.footer-content-bottom.row {
+  padding: 1.5rem 0;
+}
+
+/* footer アイコン */
+.footer-icon {
+  text-align: right;
+}
+.f-i-link-1 {
+  margin-right: 20px;
+}
+.f-i-link-2 {
+  margin-right: 50px;
+}
+.f-i-link-1, 
+.f-i-link-2 {
+  text-decoration: underline;
+  font-size: 14px;
+}
+.f-i-link-1::before, .f-i-link-2::before {
+  content: "\f0ac";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+} 
+.f-i-link-2::before {
+  content: "\f157";
+}
+.f-i-link-1, 
+.f-i-link-2,
+.fa-facebook-f, 
+.fa-twitter, 
+.fa-instagram-square {
+  color: #222; 
+}
+.f-i-link-1:hover, .f-i-link-2:hover, 
+.fa-facebook-f:hover, .fa-twitter:hover,
+.fa-instagram-square:hover {
+  color: #484848;
+}
+/* footer テキスト */
+a.footer-service {
+  display: block;
+  padding: 0;
+}
+.footer-service,
+.footer-airbnb-p,
+.footer-airbnb-list{
+  color: #222;
+  font-size: 14px;
+  line-height: 1.43;
+  text-align: left;
+}
+.footer-service:hover, 
+.footer-airbnb-list:hover {
+  color: #666;
+}
+.footer-airbnb {
+  display: flex;
+}
+.footer-airbnb-lists {
+  margin-left: 10px;
+}

@@ -1,0 +1,779 @@
+ /* Large devices (desktops, 992px and up) */
+ @media (max-width: 1130px) {
+  /* 共通 */
+  .host-heading, .security-heading, .credit-heading,
+  .world-heading, .about-heading, .question-heading {
+    font-size: 40px;
+  }
+  /* header */
+  .header-image {
+    background-image: url(img/airbnb_top.jpg);
+    background-size: 100%;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 8px;
+  }
+  .header-image::before {
+    display: block;
+    content: "";
+    padding-top: 66%;
+  }
+  .header-form {
+    background: #fff;
+    width: 98%;
+    top: 75%;
+    right: 10px;
+    padding: 0;
+  }
+  /* フォーム */
+  .header-form div:first-child{
+    width: 43%;
+    padding: 40px 0;
+    padding-left: 7px;
+  }
+  .header-form div:last-child{
+    width: 50%;
+    padding: 30px 16px;
+  }
+  .form-left-ttl {
+    font-size: 2rem;
+  }
+  .form-right-ttl {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    line-height: 1.3;
+  }
+  .form-link {
+    font-size: 0.875rem;
+  }
+  button.btn {
+    font-size: 1.125rem;
+    margin-top: 2rem;
+  }
+  button.global-nav-btn {
+    font-size: 1.125rem;
+    margin-top: 0;
+  }
+  /* フォーム区分け線 */
+  .verticul-line {
+    width: 1px;
+    height: 480px;
+    background-color: #ccc;
+  }
+
+  /* top */
+  .form-left-main, .form-right-main, hr {
+    display: none;
+  }
+  .top {
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 230px;
+    padding-top: 110px;
+  }
+  .top-ttl {
+    padding-top: 2rem;
+  }
+  .top-p {
+    padding-top: 20px;
+  }
+  /* host */
+  .host {
+    width: 56%;
+    margin: 0 auto;
+  }
+  .host-row {
+    margin-left: 0;
+  }
+  .host-p {
+    padding-right: 0;
+  }
+  .host-jumbotron {
+    width: 62%;
+    margin: 0 auto;
+  }
+  .host-jumbo-p {
+    padding-right: 3rem;
+    font-size: 14px;
+    line-height: 1.375;
+  }
+  .host-row.row>div:last-child {
+    padding-left: 0;
+  }
+  .host-jumbo-btn {
+    width: 68%;
+    background: #fff;
+    line-height: 1.5;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid black; 
+  }
+
+  /* security */
+  .security {
+    width: 66%;
+    margin: 0 auto;
+  }
+  .security-lists {
+    padding-left: 0;
+  }
+  .security-lists:first-child {
+    margin-top: 30px;
+  }
+  li.security-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .security-p {
+    padding-right: 0;
+  }
+
+  /* host2 */
+  .host2 {
+    width: 68%;
+    margin: 0 auto;
+  }
+  .host2-row>div:last-child {
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+  .host2-blockquote {
+    padding-right: 0;
+  }
+  .host2-p {
+    font-size: 14px;
+    line-height: 1.375;
+    padding-right: 1rem;
+  }
+  .host2-btn {
+    width: 79%;
+    background: #fff;
+    line-height: 1.5;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid black; 
+  }
+  blockquote {
+    position: relative;
+    font-size: 1.125rem;
+    line-height: 1.25;
+    padding: 1.5em 2rem 0 0;
+  }
+  blockquote::before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10d";
+    top: -15px;
+    left: -10px;
+    color: white;/*文字色*/
+    padding: 0.5em;/*余白*/
+    color: #FDB32B;/*背景色*/
+  }
+   
+  /* credit */
+  .credit {
+    width: 56%;
+    margin: 0 auto;
+  }
+  .credit-p {
+    padding-right: 0;
+    padding-bottom: 3rem;
+  }
+  .credit-p-3 {
+    padding-bottom: 1rem;
+  }
+  .credit-row.row>div:last-child {
+    padding-left: 15px;
+    padding-right: 2rem;
+  }
+  /* about */
+  .about {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .about-ttl-host {
+    margin-top: 20px;
+  }
+  /* question */
+  .question {
+    width: 91%;
+    margin: 0 auto;
+  }
+  .question-link {
+    font-size: 1rem;
+  }
+  li.list-group-item {
+    padding: 1.75rem .5rem;
+  }
+  
+  ul.list-group:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  .host-cards {
+    width: 65%;
+    margin: 0 auto;
+  }
+  .host-card-ttl, .host-card-p {
+    font-size: 14px;
+    padding: 0;
+  }
+  .host-card-link {
+    display: none;
+  }
+  .host-card-info {
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+  }
+  
+  /* Monetization-img */
+  .Monetization {
+    width: 100%;
+  }
+  .Monetization-img {
+    background-image: url(img/dbe25d99-6821-4e02-802f-fcd7aaef85bc.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 440px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .Monetization-box {
+    position: absolute;
+    top: 20%;
+    left: 18%;
+  }
+  .Monetization-img-ttl {
+    font-size: 40px;
+    width: 80%;
+    margin-bottom: 40px;
+  }
+  button.Monetization-img-btn {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 13px 27px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  /* footer */
+  .footer-content.row, .footer-content-bottom.row {
+    width: 92%;
+  }
+  .footer-content.row {
+    padding: 0; 
+  }
+  .footer-content>div {
+    border-bottom: 1px solid #ddd;
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .footer-content>div:last-child {
+    border-bottom: none;
+    padding-bottom: 2rem;
+  }
+  .f-i-link-1 {
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  .f-i-link-2 {
+    margin-right: 50px;
+    font-size: 14px;
+  }
+  .footer-content-bottom {
+    text-align: center;
+  }
+  .footer-content-left {
+    padding: 10px;
+  }
+  a.footer-service {
+    display: inline-block;
+  }
+  .footer-icon {
+    text-align: center;
+  }
+  .footer-airbnb, .footer-airbnb-lists {
+    display: block;
+    text-align: center;
+  }
+}
+
+ /* Medium devices (tablets, 768px and up) */
+ @media (max-width: 768px) {
+  /* header */
+
+  /* ナビゲーション*/
+
+  /* headerフォーム */
+  .header-form {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 66%;
+  }
+  button.btn-danger {
+    margin-top: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .header-form div:first-child {
+    padding-left: 1rem;
+    padding-right: 10px;
+    width: 44%;
+  }
+  .header-form div:last-child {
+    padding: 30px 20px;
+  }
+  .form-link {
+    padding-bottom: 15px;
+  }
+
+  /* top */
+  .top {
+    width: 74%;
+  }
+  .top-p {
+    margin-bottom: 3rem;
+  }
+  .top-ttl-2 {
+    padding-top: 0;
+  }
+  .top-p-2 {
+    padding-right: 1rem;
+  }
+  /* host */
+  .host {
+    width: 74%;
+  }
+  .host-row {
+    margin-right: 0;
+  }
+  .host-jumbotron {
+    width: 90%;
+  }
+  .host-jumbo-p {
+    padding-right: 1rem;
+  }
+  .fa-check-circle {
+    margin-top: 35px;
+    margin-bottom: 15px;
+  }
+  .host-jumbo-btn {
+    width: 79%;
+    line-height: 1.5;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  blockquote {
+    position: relative;
+    padding: 1.5em 1rem 0 0;/*要素内の余白*/
+    line-height: 1.25;
+  }
+  blockquote::before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10d";
+    top: -15px;
+    left: -10px;
+    color: white;/*文字色*/
+    padding: 0.5em;/*余白*/
+    color: #FDB32B;/*背景色*/
+  }
+
+  /* host2 */
+  .host2 {
+    width: 90%;
+    padding-top: 70px;
+  }
+  .host2-p {
+    padding-right: 10px;
+  }
+  .host2-blockquote {
+    line-height: 1.44;
+  }
+  /* security */
+  .security {
+    width: 89%;
+  }
+  .security-lists {
+    padding-left: 0;
+  }
+  .security-lists:first-child {
+    margin-top: 30px;
+  }
+  li.security-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  /* credit */
+  .credit {
+    width: 74%;
+    margin: 0 auto;
+  }
+  .credit-h {
+    margin-top: 20px;
+  }
+  .credit-p {
+    padding-bottom: 2rem;
+  }
+  .credit-p-3 {
+    padding-bottom: 1rem;
+  }
+  .credit-row.row>div:last-child {
+    padding-right: 1rem;
+  }
+  /* about */
+  .about {
+    width: 80%;
+  }
+  /* question */
+  li.list-group-item {
+    padding: 1.75rem .5rem;
+  }
+  ul.list-group:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  /* host-card */
+  .host-cards {
+    width: 88%;
+  }
+  /* Monetization */
+  .Monetization-box {
+    position: absolute;
+    top: 20%;
+    left: 7%;
+  }
+  button.Monetization-img-btn {
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 13px 27px;
+    border-radius: 5px;
+    border: none;
+  }
+  /* footer */
+  .footer-ttl {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  a.footer-link {
+    font-size: 14px;
+    padding: 5px 20px 5px 0;
+  }
+  
+  .footer-content-bottom.row {
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 10px;
+  }
+  .f-i-link-1 {
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  .f-i-link-2 {
+    margin-right: 50px;
+    font-size: 14px;
+  }
+  .footer-a-list {
+    line-height: 1.28;
+    list-style-type: none;
+  }
+  .footer-icon {
+    text-align: center;
+  }
+  .footer-a-list {
+    display: inline;
+    margin-left: 5px;
+  }
+  .footer-content-bottom2 {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .footer-a-p {
+    font-size: 14px;
+  }
+  a.footer-service {
+    padding: 0;
+  }
+  .footer-service, .footer-a-lists a{
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+ /* clone-bottom-nav  */
+#bottom-global-nav {
+  display: none;
+} 
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+
+  /* タイトル上共通アクセント */
+  .host-heading, .security-heading, .credit-heading, 
+  .world-heading, .about-heading, .question-heading {
+    position: relative;
+    text-align: left;
+  }
+  .host-heading::before, .security-heading::before, 
+  .credit-heading::before, .world-heading::before, 
+  .about-heading::before, .question-heading::before {
+    position: absolute;
+    top: -15px;
+    left: 0;
+    content: "";
+    width: 65px;
+    height: 2px;
+    background: black;
+  }
+  /* スクロール時グローバルナビゲーションメニュー */
+  .grobal-nav-brand, button.global-nav-btn {
+    display: none;
+  }
+  li.global-nav-item {
+    margin-right: 0;
+    padding: 0;
+  }
+  #global-nav.m_fixed {
+    padding: 0;
+  }
+  a.global-nav-link {
+    padding: 5px 0;
+  }
+  #global-navbar-nav {
+    padding-left: 15px;
+  }
+  /* スクロール下部グローバルナビ */
+  #bottom-global-nav {
+    display: none;
+    padding: 15px;
+  }
+  #bottom-global-nav-btn {
+    margin-top: 0;
+  }
+  #bottom-global-nav.m_fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: inline-block;
+  }
+  /* header */
+  header {
+    padding: 0 20px;
+  }
+  .header-image {
+    border-radius: 16px;
+  }
+  /* ナビゲーション */
+  nav.navbar {
+    padding: 0;
+  }
+  ul.navbar-nav {
+    padding-left: 10px;
+  }
+  li.nav-item {
+    padding: 10px 0;
+    line-height: 20px;
+  }
+  /* headerフォーム */
+  .header-form {
+    display: none;
+  }
+  /* フォーム(レスポンシブ) */
+  .form-left-main, .form-right-main, hr {
+    display: block;
+  }
+  .form-left-main, .form-right-main {
+    padding: 20px 8px 0;
+  }
+  .form-link {
+    padding-bottom: 20px;
+    padding-top: 10px
+  }
+  /* top */
+  .top {
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 0;
+    padding-top: 30px;
+  }
+  .top-row.row>div {
+    padding: 0;
+  }
+  .top-p {
+    line-height: 22px;
+  }
+  .top-p-2 {
+    padding-right: 0;
+  }
+  button.btn {
+    padding: 15px 0;
+    margin-top: 20px;
+  }
+  /* host */
+  .host {
+    width: 100%;
+    padding: 50px 10px 20px;
+  }
+  .host-heading {
+    margin-bottom: 0;
+    line-height: 1;
+  }
+  .host-p {
+    line-height: 1.375rem;
+  }
+  .host-jumbotron {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .host-jumbo-p {
+    padding-right: 0;
+  }
+  button.host-jumbo-btn {
+    width: 70%;
+  }
+  blockquote {
+    padding: 1.5em 0 0 0;/*要素内の余白*/
+    line-height: 1.5;
+  }
+  blockquote::before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f10d";
+    top: -5px;
+    left: -10px;
+    color: white;/*文字色*/
+    padding: 0.5em;/*余白*/
+    color: #FDB32B;/*背景色*/
+  }
+  /* host2 */
+  .host2 {
+    width: 96%;
+    padding-top: 40px;
+  }
+  .host2-row>div:last-child {
+    padding-right: 1rem;
+  }
+  button.host2-btn {
+    width: 67%;
+  }
+  /* security */
+  .security {
+    width: 100%;
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .security-lists {
+    padding-left: 0;
+  }
+  .security-lists:first-child {
+    margin-top: 30px;
+  }
+  li.security-list {
+    padding: 10px 0;
+  }
+  /* credit */
+  .credit {
+    width: 96%;
+  }
+  .credit-p {
+    line-height: 1.375rem;
+  }
+  /* about */
+  .about {
+    width: 97%;
+  }
+  .about-p {
+    padding-right: 0;
+    line-height: 1.375rem;
+  }
+  /* question */
+  .question {
+    width: 98%;
+  }
+  ul.list-group:last-child {
+    border-bottom: 1px solid #ccc;
+  }
+  .question-link {
+    font-size: 1rem;
+  }
+  /* host */
+  .host-cards {
+    width: 92%;
+    padding: 0;
+  }
+  .host-card-content {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.06);
+  }
+  .host-card-img {
+    width: 25%;
+  }
+  .host-card-info {
+    width: 75%;
+    padding: 20px 15px;
+  }
+  /* Monetization */
+  .Monetization-img {
+    height: 375px;
+  }
+  .Monetization-box {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+  }
+  .Monetization-img-ttl {
+    font-size: 40px;
+    width: 95%;
+    margin-bottom: 40px;
+  }
+
+  /* footer */
+  .footer-content.row, .footer-content-bottom.row {
+    width: 88%;
+  }
+  .footer-ttl {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  a.footer-link {
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  
+  /* footer-bottom */
+  .footer-content-bottom.row {
+    text-align: left;
+    line-height: 1.3;
+    /* padding: 20px 10px 10px 10px; */
+  }
+  .footer-airbnb, .footer-airbnb-lists {
+    text-align: left;
+  }
+  .footer-airbnb-lists {
+    margin-left: 0;
+  }
+  a.footer-service {
+    display: inline;
+  }
+  .footer-icon {
+    text-align: left;
+  }
+  i.fa-facebook-f, i.fa-twitter, i.fa-instagram-square{
+    display: none;
+  }
+}
