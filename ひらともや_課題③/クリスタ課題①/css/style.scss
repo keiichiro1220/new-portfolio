@@ -1,0 +1,470 @@
+* {
+	box-sizing: border-box;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+// 絶対値の変数
+@mixin absPosition($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+// リンクカラーの一括指定
+@mixin linkColor($color) {
+	color: $color;
+
+	&:hover,
+	&:active,
+	&:focus {
+		color: lighten($color, 20%);
+	}
+}
+$pc: "only screen and (min-width: 1200px)";
+$tablet: "only screen and (min-width:479px) and (max-width:768px)";
+$smartphone: "only screen and (max-width:479px)";
+
+// 使い方
+@media #{$smartphone} {
+}
+// header
+.header {
+	background-image: url(../img/fv-bgi@2x.jpg);
+	background-size: cover;
+	position: relative;
+	padding-top: 56.5%;
+	color: white;
+
+	@media #{$smartphone} {
+		padding-top: 157%;
+		background-image: url(../img/fv-bgi_sp@2x.jpg);
+	}
+
+	& .header-container {
+		@include absPosition(0, 0, 0, 0);
+		max-width: 100%;
+		margin: 0 auto;
+
+		// nav
+		& .h-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			height: 5vw;
+			border: 1px solid white;
+			padding: 0 8.35%;
+			@media #{$smartphone} {
+				padding: 5% 2%;
+			}
+
+			& .h-logo {
+				font-family:'Roboto', sans-serif;
+			}
+			// PC表示
+			& .nav-lists {
+				display: flex;
+				justify-content: space-between;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				align-items: center;
+				width: 25%;
+
+				@media #{$smartphone} {
+					display: none;
+				}
+				& .nav-list-link {
+					text-decoration: none;
+					color: white;
+					display: inline-block;
+					margin-right: 15%;
+				}
+				& .link-news {
+					margin-right: 0;
+				}
+				& .nav-list {
+					font-family:'Roboto', sans-serif;
+				}
+			}
+			// ハンバーガーメニュー
+			& #nav-drawer {
+				display: none;
+
+				@media #{$smartphone} {
+					display: block;
+
+					& .nav-unshown {
+						display: none;
+					}
+					& #nav-open {
+						display: inline-block;
+						width: 30px;
+						height: 22px;
+						vertical-align: middle;
+						position: absolute;
+						top: 1.5%;
+						right: 0;
+					}
+					/*閉じる用のボタン*/
+					& #nav-close {
+						display: block; /*はじめは隠しておく*/
+						position: fixed;
+						z-index: 99;
+						top: 2%; /*全体に広がるように*/
+						right: 2%;
+						width: 24px; /* ボタンのサイズ */
+						height: 24px; /* ボタンのサイズ */
+
+						&::before,
+						&::after {
+							content: "";
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							margin: auto;
+							width: 100%;
+							height: 2px; /* 線の太さ */
+							background: #fff; /* 線の色 */
+						}
+						&::before {
+							transform: rotate(45deg);
+						}
+						&::after {
+							transform: rotate(-45deg);
+						}
+					}
+					/*閉じる用のボタン終わり*/
+					// ハンバーガーメニューで表示される中身
+					& #nav-content {
+						display: block;
+						padding: 35% 0;
+						overflow: auto;
+						position: fixed;
+						top: 0;
+						left: 0;
+						z-index: 9999; /*最前面に*/
+						width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/
+						max-width: 380px; /*最大幅（調整してください）*/
+						height: 88.5%;
+						background: #000; /*背景色*/
+						// transition: 0.3s ease-in-out; /*滑らかに表示*/
+						-webkit-transform: translateX(-105%);
+						transform: translateX(-105%); /*左に隠しておく*/
+
+						& .sp-nav-link {
+							text-decoration: none;
+						}
+						& .sp-nav {
+							color: white;
+							display: block;
+							text-align: center;
+							margin-bottom: 20%;
+						}
+					}
+					/*チェックが入ったらもろもろ表示*/
+					& #nav-input:checked ~ #nav-close {
+						display: block; /*カバーを表示*/
+						// opacity: 0.5;
+					}
+
+					& #nav-input:checked ~ #nav-content {
+						-webkit-transform: translateX(0%);
+						transform: translateX(0%); /*中身を表示（右へスライド）*/
+						box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+					}
+					& #nav-open span,
+					#nav-open span:before,
+					#nav-open span:after {
+						position: absolute;
+						height: 3px; /*線の太さ*/
+						width: 25px; /*長さ*/
+						border-radius: 3px;
+						background: #fff;
+						display: block;
+						content: "";
+						cursor: pointer;
+					}
+					#nav-open span:before {
+						bottom: -8px;
+					}
+					#nav-open span:after {
+						bottom: -16px;
+					}
+				}
+			}
+		}
+
+		& .h-title {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			color: white;
+			text-align: center;
+			font-size: 4vw;
+			border: 1px solid white;
+			padding: 3%;
+			display: block; 
+			font-family:'Roboto', sans-serif;
+
+			@media #{$smartphone} {
+				width: 80%;
+				padding: 8%;
+				font-size: 7vw;
+			}
+		}
+	}
+}
+// about
+.about-wrapper {
+	& .about-container {
+		width: 71.5%;
+		margin: 7% auto;
+
+		@media #{$smartphone} {
+			width: 90.5%;
+		}
+
+		& .about-title {
+			text-align: center;
+			font-size: 3vw;
+			margin-bottom: 5%;
+			font-family:'Roboto', sans-serif;
+
+			@media #{$smartphone} {
+				font-size: 7vw;
+				margin: 20% 0;
+			}
+		}
+		& .about-title-second {
+			font-size: 1.5vw;
+			line-height: 2rem;
+			margin-bottom: 3%;
+			font-family: 'Noto Sans', sans-serif;
+
+			@media #{$smartphone} {
+				line-height: 2rem;
+				font-size: 4.7vw;
+			}
+		}
+		& .about-text {
+			line-height: 1.875rem;
+			font-size: 0.86vw;
+			font-family: 'Noto Sans', sans-serif;
+
+			@media #{$smartphone} {
+				font-size: 3.25vw;
+			}
+		}
+	}
+}
+// service
+.service-wrapper {
+	& .service-container {
+		width: 71.5%;
+		margin: 7% auto;
+
+		@media #{$smartphone} {
+			width: 90.5%;
+		}
+
+		& .service-title {
+			text-align: center;
+			font-size: 3vw;
+			margin-bottom: 5%;
+			font-family:'Roboto', sans-serif;
+
+			@media #{$smartphone} {
+				font-size: 7vw;
+				margin: 20% 0;
+			}
+		}
+		& .service-contents {
+			// service-content
+			& .service-content {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 5%;
+
+				@media #{$smartphone} {
+					flex-direction: column;
+				}
+				// image
+				& .service-image {
+					width: 45%;
+
+					@media #{$smartphone} {
+						width: 100%;
+						order: 2;
+					}
+				}
+				// image-text
+				& .image-content {
+					width: 45%;
+
+					@media #{$smartphone} {
+						width: 100%;
+					}
+					& .image-title {
+						line-height: 2.2rem;
+						font-size: 1.4vw;
+
+						@media #{$smartphone} {
+							font-size: 4.4vw;
+						}
+					}
+					& .image-text {
+						line-height: 1.5rem;
+						font-size: 0.82vw;
+						margin-top: 5%;
+
+						@media #{$smartphone} {
+							font-size: 3.1vw;
+							margin-bottom: 10%;
+						}
+					}
+				}
+				& .image2 {
+					order: 2;
+
+					// @media #{$smartphone} {
+					// 	order: 2;
+					// }
+				}
+			}
+		}
+	}
+}
+// news
+.news-wrapper {
+	& .news-container {
+		width: 71.5%;
+		margin: 7% auto;
+
+		@media #{$smartphone} {
+			width: 85.5%;
+		}
+
+		& .news-title {
+			text-align: center;
+			font-size: 3vw;
+			margin-bottom: 5%;
+			font-family:'Roboto', sans-serif;
+
+			@media #{$smartphone} {
+				font-size: 7vw;
+				margin: 20% 0;
+			}
+		}
+		& .news-contents {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			// margin-bottom: 5%;
+
+			@media #{$smartphone} {
+				flex-direction: column;
+			}
+
+			// service-content
+			& .news-content {
+				width: 30%;
+				border: 1px solid #707070;
+
+				@media #{$smartphone} {
+					width: 100%;
+					margin-bottom: 10%;
+				}
+
+				// image
+				& .news-text {
+					padding: 5%;
+					font-size: 0.85vw;
+					line-height: 1.56rem;
+
+					@media #{$smartphone} {
+						font-size: 3.6vw;
+					}
+				}
+			}
+		}
+	}
+}
+// contact
+.contact-wrapper {
+	& .contact-container {
+		width: 48.6%;
+		margin: 10% auto 3%;
+
+		@media #{$smartphone} {
+			width: 90.5%;
+		}
+
+		& .contact-title {
+			text-align: center;
+			font-size: 2vw;
+			margin-bottom: 10%;
+			font-family:'Roboto', sans-serif;
+
+			@media #{$smartphone} {
+				font-size: 7vw;
+				margin: 20% 0;
+			}
+		}
+		& .input {
+			width: 100%;
+			height: 3vw;
+			margin: 3% 0;
+
+			@media #{$smartphone} {
+				height: 8vw;
+			}
+		}
+		& .textarea {
+			width: 100%;
+
+			@media #{$smartphone} {
+				height: 42vw;
+				margin-top: 3%;
+			}
+		}
+		& .btn {
+			width: 40%;
+			border-radius: 50px;
+			background-color: black;
+			color: white;
+			display: block;
+			margin: 0 auto;
+			margin-top: 5%;
+			padding: 2%;
+			font-size: 2vw;
+			cursor: pointer;
+
+			@media #{$smartphone} {
+				margin: 8% auto;
+				width: 63%;
+				font-size: 5vw;
+			}
+		}
+	}
+}
+// footer
+.footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+	height: 5vw;
+	padding: 2%;
+
+	@media #{$smartphone} {
+		height: 10vw;
+		padding: 3%;
+		font-size: 3.5vw;
+	}
+}

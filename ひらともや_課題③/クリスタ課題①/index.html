@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリスタ_課題①</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- header -->
+  <header class="header">
+
+    <div class="header-container">
+
+      <!-- nav -->
+      <nav class="h-nav">
+
+        <!-- ロゴ -->
+        <div class="h-logo">クリ★スタ</div>
+
+        <!-- PC表示 -->
+        <ul class="nav-lists">
+          <a href="#about" class="nav-list-link">
+            <li class="nav-list">About</li>
+          </a>
+          <a href="#service" class="nav-list-link">
+            <li class="nav-list">Service</li>
+          </a>
+          <a href="#news" class="nav-list-link link-news">
+            <li class="nav-list">Contents</li>
+          </a>
+        </ul>
+        <!-- ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰ（ﾚｽﾎﾟﾝｼﾌﾞ　ｽﾏﾎ対応) -->
+        <div id="nav-drawer">
+          <!-- チェックボックス（常に非表示にする -->
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <!-- チェックボックスのラベル。ここでﾊﾝﾊﾞｰｶﾞｰｱｲｺﾝを表示タップにより、inputがチェック状態に。-->
+          <label id="nav-open" for="nav-input">
+            <div class="nav-icon"><span></span></div>
+          </label>
+
+          <!-- 表示される中身 -->
+          <div id="nav-content">
+            <ul>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">About</span></li>
+              </a>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">SERVICE</span></li>
+              </a>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">News</span></li>
+              </a>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">Contact</span></li>
+              </a>
+            </ul>
+            <!-- inputのチェック解除 -->
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          </div>
+        </div>
+        <!-- ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰ（ﾚｽﾎﾟﾝｼﾌﾞ　ｽﾏﾎ対応)終わり -->
+      </nav>
+
+      <!-- header-title -->
+      <a href="">
+        <h1 class="h-title">
+          Cresta Design.
+        </h1>
+      </a>
+    </div>
+    </div>
+  </header>
+
+  <!-- about -->
+  <section class="about-wrapper" id="about">
+    <div class="about-container">
+      <!-- title -->
+      <h2 class="about-title">About</h2>
+
+      <h3 class="about-title-second">
+        ミニマルで
+        <br>洗練されたデザインを。
+      </h3>
+
+      <!-- text -->
+      <p class="about-text">
+        近年、ミニマルなデザインが流行しています。そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。もちろん全てのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行なった上でご提案させて頂きます。
+      </p>
+    </div>
+  </section>
+
+  <!-- service -->
+  <section class="service-wrapper" id="service">
+    <div class="service-container">
+      <!-- title -->
+      <h2 class="service-title">Service</h2>
+
+      <!-- service-content -->
+      <ul class="service-contents">
+        <!-- content1 -->
+        <li class="service-content">
+          <!-- image -->
+          <figure class="service-image">
+            <img src="img/service-image@2x.jpg" alt="">
+          </figure>
+          <!-- image-content -->
+          <div class="image-content">
+            <h3 class="image-title">
+              リリース時のサポートで
+              <br>サービスのブランディングを
+            </h3>
+            <p class="image-text">
+              弊社では、リリース時もサポートさせて頂きます。プレスリリース用のサイトや動画制作を通して、サービスのブランディングを行わせて頂きます。
+            </p>
+          </div>
+        </li>
+        <!-- content2 -->
+        <li class="service-content">
+          <!-- image -->
+          <figure class="service-image image2">
+            <img src="img/service-image02@2x.jpg" alt="">
+          </figure>
+          <!-- image-content -->
+          <div class="image-content">
+            <h3 class="image-title support">
+              リリース後のサポートで
+              <br>効果を最大化させる
+            </h3>
+            <p class="image-text">
+              弊社では、リリース後もサポートさせて頂きます。サービスはリリース後に様々な課題にぶつかります。そこでクライアント様と一緒に改善を行うことで、デザインの効果を最大化させます。
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- news -->
+  <section class="news-wrapper" id="news">
+    <div class="news-container">
+      <!-- title -->
+      <h2 class="news-title">News</h2>
+
+      <!-- news-contents -->
+      <ul class="news-contents">
+
+        <!-- content1 -->
+        <li class="news-content">
+          <figure class="news-image">
+            <img src="img/card-image1@2x.jpg" alt="" class="image1">
+          </figure>
+          <p class="news-text">
+            新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+          </p>
+        </li>
+        <!-- content2 -->
+        <li class="news-content">
+          <figure class="news-image">
+            <img src="img/card-image2@2x.jpg" alt="" class="image1">
+          </figure>
+          <p class="news-text">
+            新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+          </p>
+        </li>
+        <!-- content3 -->
+        <li class="news-content">
+          <figure class="news-image">
+            <img src="img/card-image3@2x.jpg" alt="" class="image1">
+          </figure>
+          <p class="news-text">
+            新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact-wrapper" id="contact">
+    <div class="contact-container">
+      <!-- title -->
+      <h2 class="contact-title">お問い合わせ</h2>
+
+      <!-- form -->
+      <form action="">
+        <!-- 担当者名 -->
+        <label for="" class="label">担当者名</label>
+        <input type="text" class="input">
+        <!-- 電話番号 -->
+        <label for="" class="label">電話番号</label>
+        <input type="text" class="input">
+        <!-- メールアドレス -->
+        <label for="" class="label">メールアドレス</label>
+        <input type="text" class="input">
+        <!-- お問い合わせ内容 -->
+        <label for="" class="label">お問い合わせ内容</label>
+        <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+        <!-- 送信ボタン -->
+        <input type="submit" class="btn" value="送信">
+      </form>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    ©︎crest.design all rights reserved
+  </footer>
+</body>
+
+</html>

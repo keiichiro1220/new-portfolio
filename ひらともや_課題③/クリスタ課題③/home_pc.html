@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリスタ課題③</title>
+  <!-- reset_css -->
+  <link rel="stylesheet" href="css/reset.css">
+  <!-- style.css -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!--Montserrat  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,500;0,600;1,600&display=swap"
+    rel="stylesheet">
+  <!--Noto+Sans+JP  -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <!--header -->
+  <header class="header">
+    <!-- header-nav -->
+    <nav class="h-nav">
+
+      <!-- brand-logo -->
+      <div class="brando-logo">
+        <img src="img/home/site-logo.png" alt="">
+      </div>
+
+      <!-- hamburger-menu -->
+
+      <!-- ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰ（ﾚｽﾎﾟﾝｼﾌﾞ　ｽﾏﾎ対応) -->
+      <div id="nav-drawer">
+
+        <!-- チェックボックス（常に非表示にする -->
+        <input id="nav-input" type="checkbox" class="nav-unshown">
+
+        <!-- チェックボックスのラベル。ここでﾊﾝﾊﾞｰｶﾞｰｱｲｺﾝを表示タップにより、inputがチェック状態に。-->
+        <label id="nav-open" for="nav-input">
+          <div class="nav-icon"><span></span></div>
+        </label>
+
+        <!-- 表示される中身 -->
+      
+        <div id="nav-content">
+          <ul>
+            <a href="" class="sp-nav-link link-top">
+              <li><img src="img/home/前面オブジェクトで型抜き 1.png" alt=""></li>
+            </a>
+            <a href="#about" class="sp-nav-link">
+              <li><span class="sp-nav">ABOUT US</span></li>
+            </a>
+            <a href="#works" class="sp-nav-link">
+              <li><span class="sp-nav">WORKS</span></li>
+            </a>
+            <a href="#culture" class="sp-nav-link">
+              <li><span class="sp-nav">CULTURE</span></li>
+            </a>
+            <a href="#topics" class="sp-nav-link">
+              <li><span class="sp-nav">TOPICS</span></li>
+            </a>
+            <a href="#contact" class="sp-nav-link">
+              <li><span class="sp-nav">CONTACT</span></li>
+            </a>
+          </ul>
+          <!-- inputのチェック解除 -->
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        </div>
+
+      </div>
+      <!-- ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰ（ﾚｽﾎﾟﾝｼﾌﾞ　ｽﾏﾎ対応)終わり -->
+
+      <span class="menu-title">MENU</span>
+
+    </nav>
+
+    <div class="h-image-container">
+    </div>
+    <div class="h-title">
+      <p class="lead">デザインで人を笑顔にする会社</p>
+      <p class="lead">DIGSMILE INC.</p>
+      <h1 class="heading">
+        DESIGN<br>FOR<br>SMILE.
+      </h1>
+    </div>
+    <div class="header-black-wrapper"></div>
+  </header>
+
+  <!-- about us -->
+  <section class="about-wrapper" id="about">
+    <div class="about-container">
+      <!-- about content -->
+      <div class="about-content">
+        <h2 class="about-title">ABOUT US</h2>
+        <p class="about-lead">
+          DIGSMILEは、デザインで人を笑顔にする会社。
+          <br> なんでもない日常に少しのワクワクと遊び心を提供します。笑顔には世界を変える力がある、デザインには人を幸せにする力がある。毎日に幸せを感じて生きていきたい。
+          <br> DIGSMILEの社名にはそんな想いが込められています。
+        </p>
+        <a href="">
+          <button class="about-btn" type="submit">READ MORE</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- works culture -->
+  <section class="wc-wrapper" id="works">
+    <div class="wc-container">
+      <!-- wc content -->
+      <ul class="wc-content">
+        <!-- works -->
+        <li class="content-list">
+          <h2 class="content-title">WORKS</h2>
+          <figure class="content-image">
+            <img src="img/home/works-img.png" alt="">
+          </figure>
+          <p class="content-lead">DIGSMILEの制作実績を紹介します。</p>
+          <a href="">
+            <button class="content-btn" type="submit">READ MORE</button>
+          </a>
+        </li>
+        <!-- culture -->
+        <li class="content-list" id="culture">
+          <h2 class="content-title">CULTURE</h2>
+          <figure class="content-image">
+            <img src="img/home/culture-img.png" alt="">
+          </figure>
+          <p class="content-lead">DIGSMILEの社内文化について紹介します。</p>
+          <a href="">
+            <button class="content-btn" type="submit">READ MORE</button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- latest topics -->
+  <section class="history-wrapper" id="topics">
+    <div class="history-container">
+      <!-- topics title -->
+      <h2 class="history-heading">LATEST TOPICS</h2>
+      <!-- topics -->
+      <ul class="history-news">
+        <!-- topics list -->
+        <li class="news-list">
+          <span class="news-date">2020.02.01</span>
+          <a href="" class="news-link">
+            <h3 class="news-title">イベントレポート「VRクリエイター座談会 〜5Gの次に来るもの〜」</h3>
+          </a>
+        </li>
+        <li class="news-list">
+          <span class="news-date">2020.01.18</span>
+          <a href="" class="news-link">
+            <h3 class="news-title">プレスリリースのお知らせ DIGGIN’ RECORDS</h3>
+          </a>
+        </li>
+        <li class="news-list">
+          <span class="news-date">2020.01.01</span>
+          <a href="" class="news-link">
+            <h3 class="news-title">新年明けましておめでとうございます</h3>
+          </a>
+        </li>
+      </ul>
+      <!-- topics btn -->
+      <div class="history-btn-block">
+        <a href="#">
+          <button class="history-btn" type="submit">READ MORE</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section class="contact-wrapper" id="contact">
+    <div class="contact-container">
+      <!-- contact content -->
+      <ul class="contact-content">
+
+        <!-- contact article -->
+        <li class="content-list">
+          <h2 class="content-title">CONTACT</h2>
+          <p class="content-lead">
+            制作の依頼、取材の依頼、IRや採用についての連絡・お問い合わせはコンタクトページから承っております。
+            <br> まずはお気軽にご連絡ください。担当者から改めて返信いたします。
+          </p>
+          <a href="#">
+            <button class="content-btn" type="submit">READ MORE</button>
+          </a>
+        </li>
+        <!-- contact image -->
+        <li class="content-list">
+          <figure class="contact-image">
+            <img src="img/home/recruit-img.png" alt="">
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    ©2018 DIGSMILE INC.
+  </footer>
+
+  <!-- javascript -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>

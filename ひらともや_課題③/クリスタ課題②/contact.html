@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コーディング課題02</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="contact-page-header">
+    <div class="c-p-h-container">
+
+      <!-- nav -->
+      <nav class="c-p-h-nav">
+        <!-- logo -->
+        <div class="c-p-h-logo">Cresta Design</div>
+
+        <!-- nav-list -->
+        <!-- PC表示 -->
+        <ul class="c-p-h-nav-lists">
+          <li class="c-p-h-nav-list">Concept</li>
+          <li class="c-p-h-nav-list">Service</li>
+          <li class="c-p-h-nav-list">Works</li>
+          <li class="c-p-h-nav-list list-last">Contact</li>
+        </ul>
+
+        <!-- ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰ（ﾚｽﾎﾟﾝｼﾌﾞ　ｽﾏﾎ対応) -->
+        <div id="nav-drawer">
+          <!-- チェックボックス（常に非表示にする -->
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <!-- チェックボックスのラベル。ここでﾊﾝﾊﾞｰｶﾞｰｱｲｺﾝを表示タップにより、inputがチェック状態に。-->
+          <label id="nav-open" for="nav-input">
+            <div class="nav-icon"><span></span></div>
+          </label>
+
+          <!-- 表示される中身 -->
+          <div id="nav-content">
+            <ul>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">Concept</span></li>
+              </a>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">Service</span></li>
+              </a>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">Works</span></li>
+              </a>
+              <a href="" class="sp-nav-link">
+                <li><span class="sp-nav">Contact</span></li>
+              </a>
+            </ul>
+            <!-- inputのチェック解除 -->
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          </div>
+        </div>
+        <!-- ﾊﾝﾊﾞｰｶﾞｰﾒﾆｭｰ（ﾚｽﾎﾟﾝｼﾌﾞ　ｽﾏﾎ対応)終わり -->
+      </nav>
+
+      <!-- header-title -->
+      <h1 class="contact-page-title">Contact</h1>
+
+      <!-- contact us -->
+      <span class="contact-page-concept">Contact us</span>
+
+    </div>
+  </header>
+  <!-- contact -->
+  <section class="contact-page-form">
+    <div class="c-p-f-container">
+      <!-- title -->
+      <h5 class="c-p-f-title">お問い合わせ内容</h5>
+      <!-- checkbox -->
+      <div class="check-box">
+        <label for="" class="c-b"><input type="checkbox">資料請求</label>
+        <label for="" class="c-b"><input type="checkbox">お電話でのご相談を希望</label>
+        <label for="" class="c-b"><input type="checkbox">申し込み</label>
+      </div>
+      <!-- form -->
+      <form action="">
+        <!-- 担当者名 -->
+        <label for="" class="label">担当者名</label>
+        <input type="text" class="input">
+        <!-- 電話番号 -->
+        <label for="" class="label">電話番号</label>
+        <input type="text" class="input">
+        <!-- メールアドレス -->
+        <label for="" class="label">メールアドレス</label>
+        <input type="text" class="input">
+        <!-- お問い合わせ内容 -->
+        <label for="" class="label">その他</label>
+        <textarea name="" id="" cols="30" rows="10" class="textarea"></textarea>
+        <!-- 送信ボタン -->
+        <input type="submit" class="btn" value="submit">
+      </form>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="contact-page-footer">
+    ©︎cresta.design all rights reserved
+  </footer>
+</body>
+
+</html>

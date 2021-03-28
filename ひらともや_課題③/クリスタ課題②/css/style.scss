@@ -1,0 +1,1032 @@
+// 絶対値の指定
+@mixin absPosition($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+// ブレイクポイント
+$pc: "only screen and (min-width: 1200px)";
+$tablet: "only screen and (min-width:479px) and (max-width:768px)";
+$smartphone: "only screen and (max-width:479px)";
+
+// header
+.header {
+	// background-image: url(../img/fv-bgi_01@2x.jpg);
+	background-size: cover;
+	position: relative;
+	padding-top: 52.2%;
+
+	@media #{$smartphone} {
+		padding-top: 160%;
+		background-position: center;
+	}
+
+	// 背景画像スライダー
+	& .bg-slider {
+		width: 100vw;
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	// 途中から表示ナビ
+	& .h-clone-nav {
+		background-color: #282f35;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: #fff;
+		height: 5vw;
+		width: 100%;
+		padding: 0 8.25%;
+		position: fixed;
+		z-index: 30;
+
+		& .clone-logo {
+			font-family: "Noto Serif", serif;
+			font-size: 2vw;
+			letter-spacing: 0.05em;
+		}
+		& .clone-nav {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+
+			& .h-nav-link {
+				display: inline-block;
+				text-decoration: none;
+				color: #fff;
+				margin-right: 10%;
+			}
+			& .h-nav-list {
+				font-family: "Noto Serif", serif;
+				margin-right: 10%;
+				font-size: 1.5vw;
+				letter-spacing: 0.05em;
+			}
+			& .list-last {
+				margin: 0;
+			}
+		}
+	}
+	// スクロールナビの画面トップ固定
+	& .is-flow {
+		top: 0;
+	}
+	 
+
+	& .header-container {
+		max-width: 83.3%;
+		margin: 0 auto;
+		@include absPosition(0, 0, 0, 0);
+
+		@media #{$smartphone} {
+			max-width: 90.3%;
+		}
+		& .h-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #fff;
+			height: 5vw;
+
+			@media #{$smartphone} {
+				height: 15vw;
+			}
+
+			& .h-logo {
+				font-family: "Noto Serif", serif;
+				font-size: 2vw;
+				letter-spacing: 0.05em;
+
+				@media #{$smartphone} {
+					font-size: 5vw;
+					// padding-top: 10%;
+				}
+			}
+			& .h-nav-lists {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				@media #{$smartphone} {
+					display: none;
+				}
+				& .h-nav-link {
+					display: inline-block;
+					text-decoration: none;
+					color: #fff;
+					margin-right: 10%;
+				}
+				& .h-nav-list {
+					font-family: "Noto Serif", serif;
+					font-size: 1.5vw;
+					letter-spacing: 0.05em;
+				}
+				& .list-last {
+					margin: 0;
+				}
+			}
+
+			// ハンバーガーメニュー
+			& #nav-drawer {
+				display: none;
+
+				@media #{$smartphone} {
+					display: block;
+
+					& .nav-unshown {
+						display: none;
+					}
+					& #nav-open {
+						display: inline-block;
+						width: 30px;
+						height: 22px;
+						vertical-align: middle;
+					}
+					/*閉じる用のボタン*/
+					& #nav-close {
+						display: block; /*はじめは隠しておく*/
+						position: fixed;
+						z-index: 99;
+						top: 2%; /*全体に広がるように*/
+						right: 4.85%;
+						width: 24px; /* ボタンのサイズ */
+						height: 24px; /* ボタンのサイズ */
+
+						&::before,
+						&::after {
+							content: "";
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							margin: auto;
+							width: 100%;
+							height: 2px; /* 線の太さ */
+							background: #fff; /* 線の色 */
+						}
+						&::before {
+							transform: rotate(45deg);
+						}
+						&::after {
+							transform: rotate(-45deg);
+						}
+					}
+					/*閉じる用のボタン終わり*/
+					// ハンバーガーメニューで表示される中身
+					& #nav-content {
+						display: block;
+						padding: 65% 0;
+						overflow: auto;
+						position: fixed;
+						top: 0;
+						left: 0;
+						z-index: 9999; /*最前面に*/
+						width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/
+						max-width: 380px; /*最大幅（調整してください）*/
+						height: 100%;
+						background: #000; /*背景色*/
+						// transition: 0.3s ease-in-out; /*滑らかに表示*/
+						-webkit-transform: translateX(-105%);
+						transform: translateX(-105%); /*左に隠しておく*/
+
+						& .sp-nav-link {
+							text-decoration: none;
+						}
+						& .sp-nav {
+							color: white;
+							display: block;
+							text-align: center;
+							margin-bottom: 10%;
+						}
+					}
+					/*チェックが入ったらもろもろ表示*/
+					& #nav-input:checked ~ #nav-close {
+						display: block; /*カバーを表示*/
+						// opacity: 0.5;
+					}
+
+					& #nav-input:checked ~ #nav-content {
+						-webkit-transform: translateX(0%);
+						transform: translateX(0%); /*中身を表示（右へスライド）*/
+						box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+					}
+					& #nav-open span,
+					#nav-open span:before,
+					#nav-open span:after {
+						position: absolute;
+						height: 3px; /*線の太さ*/
+						width: 25px; /*長さ*/
+						border-radius: 3px;
+						background: #fff;
+						display: block;
+						content: "";
+						cursor: pointer;
+					}
+					#nav-open span:before {
+						bottom: -8px;
+					}
+					#nav-open span:after {
+						bottom: -16px;
+					}
+				}
+			}
+		}
+		// header-title
+		& .h-title {
+			color: #fff;
+			font-family: "Noto Serif", serif;
+			padding-top: 29%;
+
+			@media #{$smartphone} {
+				text-align: center;
+				padding-top: 45%;
+			}
+			& .h-title-top {
+				font-size: 5vw;
+				letter-spacing: 0.05em;
+
+				@media #{$smartphone} {
+					font-size: 10vw;
+				}
+			}
+			& .h-title-bottom {
+				font-size: 2.3vw;
+				letter-spacing: 0.05em;
+				padding: 2%;
+				line-height: 3.125rem;
+
+				@media #{$smartphone} {
+					font-size: 6vw;
+					width: 60%;
+					margin: 15% auto;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
+// concept
+.offset {
+	height: 10vw;
+}
+.concept-wrapper {
+	& .concept-container {
+		max-width: 69.4%;
+		margin: 7% auto;
+		font-family: "Noto Serif", serif;
+		// @include absPosition(0, 0, 0, 0);
+
+		@media #{$smartphone} {
+			max-width: 89.4%;
+		}
+
+		// title
+		& .concept-title-box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 50%;
+
+			@media #{$smartphone} {
+				width: 100%;
+				justify-content: flex-start;
+			}
+
+			& .c-title {
+				font-size: 4vw;
+				letter-spacing: 0.05em;
+
+				@media #{$smartphone} {
+					font-size: 8vw;
+					padding: 10% 0;
+					margin-right: 5%;
+				}
+			}
+			& .title-side-line {
+				width: 37%;
+				height: 0.3vw;
+				background-color: #000;
+				display: inline-block;
+
+				@media #{$smartphone} {
+					width: 20%;
+					height: 1vw;
+				}
+			}
+		}
+		// title-2
+		& .c-second-title {
+			font-size: 2vw;
+			letter-spacing: 0.05em;
+			padding: 6% 18%;
+			text-align: center;
+			line-height: 3.125rem;
+
+			@media #{$smartphone} {
+				font-size: 4.2vw;
+				letter-spacing: 0.05em;
+				padding: 6% 10%;
+				text-align: center;
+				line-height: 1.5;
+			}
+		}
+
+		// content
+		& .c-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@media #{$smartphone} {
+				flex-direction: column;
+			}
+
+			// content-text
+			& .c-text {
+				width: 45%;
+				font-size: 1.01vw;
+				line-height: 1.875rem;
+
+				@media #{$smartphone} {
+					width: 100%;
+					font-size: 3.7vw;
+					line-height: 1.875rem;
+					margin-bottom: 10%;
+				}
+			}
+			// content-image
+			& .c-image {
+				width: 45%;
+
+				@media #{$smartphone} {
+					width: 100%;
+				}
+			}
+		}
+		& .our-concept {
+			color: #171717;
+			font-size: 5.5vw;
+			display: block;
+			text-align: right;
+			font-weight: bold;
+			padding-top: 8%;
+			opacity: 0.1;
+			letter-spacing: 0.05em;
+
+			@media #{$smartphone} {
+				font-size: 11vw;
+			}
+		}
+	}
+}
+// works
+.works-wrapper {
+	background-image: url(../img/works-bgi@2x.jpg);
+	background-size: cover;
+	position: relative;
+	padding-top: 68.4%;
+
+	@media #{$smartphone} {
+		padding-top: 408.8%;
+		background-position: center;
+	}
+
+	& .works-container {
+		max-width: 83.3%;
+		margin: 7% auto;
+		font-family: "Noto Serif", serif;
+		@include absPosition(0, 0, 0, 0);
+
+		@media #{$smartphone} {
+			max-width: 90.3%;
+			margin: 20% auto;
+		}
+
+		// title
+		& .works-title-box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 38%;
+			margin-left: auto;
+
+			@media #{$smartphone} {
+				width: 60%;
+				font-size: 6vw;
+			}
+
+			& .works-title {
+				font-size: 4vw;
+				letter-spacing: 0.05em;
+				letter-spacing: 0.1em;
+				line-height: 3rem;
+				color: #fff;
+
+				@media #{$smartphone} {
+					font-size: 6vw;
+				}
+			}
+			& .title-side-line {
+				width: 47%;
+				height: 0.3vw;
+				background-color: #fff;
+				display: inline-block;
+
+				@media #{$smartphone} {
+					height: 1vw;
+				}
+			}
+		}
+
+		// content
+		& .w-content {
+			max-width: 83.3%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 9% 0 6%;
+
+			@media #{$smartphone} {
+				flex-direction: column;
+				max-width: 100%;
+				padding: 15% 0 6%;
+			}
+
+			// content-text
+			& .w-content-list {
+				width: 32%;
+
+				@media #{$smartphone} {
+					width: 100%;
+					margin-bottom: 10%;
+				}
+				& .w-text {
+					background-color: #fff;
+					color: #000;
+					padding: 5%;
+					font-size: 0.95vw;
+					letter-spacing: 0.05em;
+					line-height: 1.875rem;
+
+					@media #{$smartphone} {
+						line-height: 1.875;
+						font-size: 3.7vw;
+					}
+				}
+			}
+		}
+		// works-btn
+		& .works-btn {
+			text-align: center;
+			& .w-btn {
+				width: 22.3%;
+				background-color: #f7d43f;
+				color: #000;
+				padding: 2%;
+				border-radius: 40px;
+				font-size: 1.5vw;
+
+				@media #{$smartphone} {
+					width: 72.3%;
+					padding: 5%;
+					font-size: 5vw;
+				}
+			}
+		}
+	}
+	// our works
+	& .works-concept {
+		position: absolute;
+		bottom: 6%;
+		left: 8.35%;
+		color: #fff;
+		font-size: 6vw;
+		display: block;
+		text-align: left;
+		font-weight: bold;
+		opacity: 0.1;
+		letter-spacing: 0.05em;
+
+		@media #{$smartphone} {
+			font-size: 10vw;
+			left: 4.85%;
+		}
+	}
+}
+// service
+.service-wrapper {
+	& .service-container {
+		font-family: "Noto Serif", serif;
+
+		// title
+		& .service-title-box {
+			max-width: 69.4%;
+			margin: 7% auto;
+			display: flex;
+			align-items: center;
+
+			@media #{$smartphone} {
+				max-width: 90.3%;
+				margin: 15% auto;
+			}
+
+			& .service-title {
+				font-size: 4vw;
+				margin-right: 3%;
+
+				@media #{$smartphone} {
+					font-size: 9vw;
+				}
+			}
+			& .title-side-line {
+				width: 20%;
+				height: 0.3vw;
+				background-color: #000;
+				display: inline-block;
+
+				@media #{$smartphone} {
+					height: 1vw;
+					width: 30%;
+				}
+			}
+		}
+
+		// content
+		& .s-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@media #{$smartphone} {
+				flex-direction: column;
+			}
+
+			// content-text
+			& .s-content-list {
+				width: 33.3%;
+				font-size: 1rem;
+				position: relative;
+
+				@media #{$smartphone} {
+					width: 100%;
+					margin-bottom: 5%;
+					line-height: 1;
+				}
+				& .s-image {
+					background-color: #000;
+
+					&:hover {
+						& .image {
+							opacity: 0.5;
+						}
+					}
+				}
+				// content-image
+				& .image-title {
+					@include absPosition(50%, auto, auto, 50%);
+					transform: translate(-50%, -50%);
+					font-size: 3vw;
+					color: #fff;
+
+					@media #{$smartphone} {
+						font-size: 5vw;
+					}
+				}
+			}
+		}
+		& .service-concept {
+			max-width: 83.3%;
+			margin: 0 auto;
+			color: #000;
+			font-size: 6vw;
+			display: block;
+			text-align: right;
+			font-weight: bold;
+			opacity: 0.1;
+			padding: 5% 0;
+			letter-spacing: 0.05em;
+
+			@media #{$smartphone} {
+				font-size: 10vw;
+				max-width: 90.3%;
+				padding: 5% 0 10%;
+			}
+		}
+	}
+}
+// contact
+.contact-wrapper {
+	background-image: url(../img/contact-bgi@2x.jpg);
+	background-size: cover;
+	position: relative;
+	padding-top: 46.25%;
+
+	@media #{$smartphone} {
+		padding-top: 129.3%;
+		background-position: center;
+	}
+
+	& .contact-container {
+		max-width: 83.3%;
+		margin: 7% auto;
+		font-family: "Noto Serif", serif;
+		@include absPosition(0, 0, 0, 0);
+
+		@media #{$smartphone} {
+			max-width: 90.3%;
+		}
+		// title
+		& .contact-title-box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 41%;
+			margin-left: auto;
+
+			@media #{$smartphone} {
+				width: 70%;
+				padding: 15% 0;
+			}
+
+			& .contact-title {
+				font-size: 4vw;
+				color: #fff;
+				text-align: right;
+				letter-spacing: 0.1em;
+				line-height: 3rem;
+
+				@media #{$smartphone} {
+					font-size: 6vw;
+				}
+			}
+			& .title-side-line {
+				width: 45%;
+				height: 0.3vw;
+				background-color: #fff;
+				display: inline-block;
+
+				@media #{$smartphone} {
+					width: 42%;
+					height: 1vw;
+				}
+			}
+		}
+
+		// content
+		& .c-text {
+			color: #fff;
+			font-size: 1rem;
+			padding: 9% 0 4%;
+			text-align: center;
+
+			@media #{$smartphone} {
+			}
+		}
+		// content-text
+		& .contact-btn {
+			text-align: center;
+			@media #{$smartphone} {
+				padding: 5% 0 10%;
+			}
+
+			& .c-btn {
+				display: inline-block;
+				width: 19.3%;
+				background-color: #f7d43f;
+				color: #000;
+				padding: 1.5%;
+				border-radius: 40px;
+				font-size: 1rem;
+				cursor: pointer;
+				@media #{$smartphone} {
+					width: 60.3%;
+					padding: 3%;
+					font-size: 4vw;
+				}
+			}
+		}
+	}
+	// our works
+	& .contact-concept {
+		color: #fff;
+		font-size: 6vw;
+		display: block;
+		text-align: left;
+		font-weight: bold;
+		opacity: 0.1;
+		padding-top: 9%;
+
+		@media #{$smartphone} {
+			font-size: 10vw;
+		}
+	}
+}
+//footer
+.footer {
+	height: 5vw;
+	text-align: center;
+	line-height: 5vw;
+
+	@media #{$smartphone} {
+		height: 15vw;
+		line-height: 15vw;
+	}
+}
+//contact-page
+.contact-page-header {
+	background-image: url(../img/contact-page-bgi@2x.jpg);
+	background-size: cover;
+	width: 100%;
+	position: relative;
+	aspect-ratio: 16/5;
+
+	@media #{$smartphone} {
+		aspect-ratio: 1/1;
+		background-position: center;
+	}
+
+	& .c-p-h-container {
+		max-width: 83.3%;
+		margin: 0 auto;
+		color: #fff;
+
+		@media #{$smartphone} {
+			max-width: 90.3%;
+		}
+
+		& .c-p-h-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			color: #fff;
+			height: 8vw;
+
+			@media #{$smartphone} {
+				height: 15vw;
+			}
+			& .c-p-h-logo {
+				font-size: 1.8vw;
+
+				@media #{$smartphone} {
+					font-size: 7vw;
+					line-height: 15vw;
+				}
+			}
+			& .c-p-h-nav-lists {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+
+				@media #{$smartphone} {
+					display: none;
+				}
+				& .c-p-h-nav-list {
+					font-family: "Noto Serif", serif;
+					margin-right: 15%;
+					font-size: 1rem;
+					letter-spacing: 0.05em;
+				}
+				& .list-last {
+					margin-right: 0;
+				}
+			}
+
+			& #nav-drawer {
+				display: none;
+
+				@media #{$smartphone} {
+					display: block;
+
+					& .nav-unshown {
+						display: none;
+					}
+					& #nav-open {
+						display: inline-block;
+						width: 30px;
+						height: 22px;
+						vertical-align: middle;
+						// position: absolute;
+						// top: 1.5%;
+						// top: 0;
+						// right: 0;
+					}
+					/*閉じる用のボタン*/
+					& #nav-close {
+						display: block; /*はじめは隠しておく*/
+						position: fixed;
+						z-index: 99;
+						top: 2%; /*全体に広がるように*/
+						right: 4.85%;
+						width: 24px; /* ボタンのサイズ */
+						height: 24px; /* ボタンのサイズ */
+						// left: 0;
+						// width: 100%;
+						// height: 100%;
+						// background: black;
+						// opacity: 0;
+						// transition: 0.3s ease-in-out;
+
+						&::before,
+						&::after {
+							content: "";
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+							margin: auto;
+							width: 100%;
+							height: 2px; /* 線の太さ */
+							background: #fff; /* 線の色 */
+						}
+						&::before {
+							transform: rotate(45deg);
+						}
+						&::after {
+							transform: rotate(-45deg);
+						}
+					}
+					/*閉じる用のボタン終わり*/
+					// ハンバーガーメニューで表示される中身
+					& #nav-content {
+						display: block;
+						padding: 65% 0;
+						overflow: auto;
+						position: fixed;
+						top: 0;
+						left: 0;
+						z-index: 9999; /*最前面に*/
+						width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/
+						max-width: 380px; /*最大幅（調整してください）*/
+						height: 100%;
+						background: #000; /*背景色*/
+						// transition: 0.3s ease-in-out; /*滑らかに表示*/
+						-webkit-transform: translateX(-105%);
+						transform: translateX(-105%); /*左に隠しておく*/
+
+						& .sp-nav-link {
+							text-decoration: none;
+						}
+						& .sp-nav {
+							color: white;
+							display: block;
+							text-align: center;
+							margin-bottom: 10%;
+						}
+					}
+					/*チェックが入ったらもろもろ表示*/
+					& #nav-input:checked ~ #nav-close {
+						display: block; /*カバーを表示*/
+						// opacity: 0.5;
+					}
+
+					& #nav-input:checked ~ #nav-content {
+						-webkit-transform: translateX(0%);
+						transform: translateX(0%); /*中身を表示（右へスライド）*/
+						box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+					}
+					& #nav-open span,
+					#nav-open span:before,
+					#nav-open span:after {
+						position: absolute;
+						height: 3px; /*線の太さ*/
+						width: 25px; /*長さ*/
+						border-radius: 3px;
+						background: #fff;
+						display: block;
+						content: "";
+						cursor: pointer;
+					}
+					#nav-open span:before {
+						bottom: -8px;
+					}
+					#nav-open span:after {
+						bottom: -16px;
+					}
+				}
+			}
+		}
+		& .contact-page-title {
+			@include absPosition(50%, auto, auto, 50%);
+			transform: translate(-50%, -50%);
+			font-size: 5vw;
+			letter-spacing: 0.1em;
+
+			@media #{$smartphone} {
+				font-size: 8vw;
+			}
+		}
+
+		& .contact-page-concept {
+			@include absPosition(auto, auto, 0, 0);
+			bottom: 15%;
+			left: 4%;
+			color: #fff;
+			font-size: 5vw;
+			display: block;
+			font-weight: bold;
+			opacity: 0.1;
+			letter-spacing: 0.05em;
+
+			@media #{$smartphone} {
+				font-size: 10vw;
+				bottom: 19%;
+			}
+		}
+	}
+}
+.contact-page-form {
+	& .c-p-f-container {
+		width: 48.6%;
+		margin: 10% auto 3%;
+
+		@media #{$smartphone} {
+			width: 90.5%;
+			margin: 20% auto 3%;
+		}
+
+		& .c-p-f-title {
+			text-align: left;
+			font-family: "Roboto", sans-serif;
+
+			// @media #{$smartphone} {
+			// 	font-size: 7vw;
+			// 	margin: 20% 0;
+			// }
+		}
+
+		& .check-box {
+			padding: 2% 0 5%;
+
+			@media #{$smartphone} {
+				padding: 5% 0;
+			}
+
+			& .c-b {
+				margin-right: 2%;
+
+				@media #{$smartphone} {
+					display: block;
+					margin-bottom: 3%;
+				}
+			}
+		}
+		& .input {
+			width: 100%;
+			height: 2vw;
+			margin: 1% 0 3%;
+
+			@media #{$smartphone} {
+				height: 8vw;
+			}
+		}
+		& .textarea {
+			width: 100%;
+			margin-top: 1%;
+
+			// @media #{$smartphone} {
+			// 	height: 42vw;
+			// 	margin-top: 3%;
+			// }
+		}
+		& .btn {
+			width: 30%;
+			border-radius: 50px;
+			background-color: #f7d43f;
+			color: #000;
+			display: block;
+			margin: 0 auto;
+			margin-top: 7%;
+			padding: 1.5%;
+			font-size: 1.5vw;
+
+			@media #{$smartphone} {
+				margin: 15% auto;
+				width: 63%;
+				font-size: 4vw;
+				padding: 3.5%;
+			}
+		}
+	}
+}
+// contact-page-footer
+.contact-page-footer {
+	height: 5vw;
+	text-align: center;
+	line-height: 5vw;
+	font-size: 1vw;
+
+	@media #{$smartphone} {
+		height: 15vw;
+		line-height: 15vw;
+		font-size: 4vw;
+	}
+}

@@ -1,0 +1,1284 @@
+* {
+	box-sizing: border-box;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+// positionの変数
+@mixin absPosition($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+// メディアクエリ
+$pc: "only screen and (min-width: 1200px)";
+$tablet: "only screen and (min-width:479px) and (max-width:768px)";
+$smartphone: "only screen and (max-width:479px)";
+
+// 使い方
+@media #{$smartphone} {
+}
+
+// header
+.header {
+	position: relative;
+	width: 100%;
+	padding-top: 50%;
+	background-color: #fff;
+
+	@media #{$tablet} {
+		padding-top: 162%;
+	}
+	@media #{$smartphone} {
+		// padding-top: 225.5%;
+		padding-top: 205.5%;
+	}
+
+	& .h-nav {
+		@include absPosition(0, auto, auto, 0);
+		z-index: 3;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 2%;
+
+		@media #{$smartphone} {
+			padding: 3%;
+		}
+
+		& .brando-logo {
+			@media #{$smartphone} {
+				width: 50%;
+			}
+		}
+
+		& #nav-drawer {
+
+			& .nav-unshown {
+				display: none;
+				position: absolute;
+				right: 7%;
+				top: 40%;
+			}
+			& #nav-open {
+				display: inline-block;
+				width: 30px;
+				height: 22px;
+				vertical-align: middle;
+				position: absolute;
+				right: 80px;
+				top: 32%;
+			}
+			/*閉じる用のボタン*/
+			& #nav-close {
+				display: block; /*はじめは隠しておく*/
+				position: absolute;
+				z-index: 99;
+				top: 2.3vh;
+				right: 80px;
+				width: 24px; /* ボタンのサイズ */
+				height: 24px; /* ボタンのサイズ */
+
+				@media #{$tablet} {
+					// right: 9%;
+				}
+				@media #{$smartphone} {
+					top: 1.7vh;
+				}
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+					width: 100%;
+					height: 2px; /* 線の太さ */
+					background: #fff; /* 線の色 */
+					cursor: pointer;
+				}
+				&::before {
+					transform: rotate(45deg);
+				}
+				&::after {
+					transform: rotate(-45deg);
+				}
+			}
+			/*閉じる用のボタン終わり*/
+
+			// ハンバーガーメニューで表示される中身
+			& #nav-content {
+				display: block;
+				padding: 12% 0;
+				overflow: auto;
+				position: fixed;
+				top: 0;
+				right: 0;
+				z-index: 9998; /*最前面に*/
+				width: 100%; /*右側に隙間を作る（閉じるカバーを表示）*/
+				max-width: 36.1%; /*最大幅（調整してください）*/
+				height: 100%;
+				background: #000; /*背景色*/
+				opacity: 0.9;
+				transition: 0.3s ease-in-out; /*滑らかに表示*/
+				-webkit-transform: translateX(105%);
+				transform: translateX(105%); /*左に隠しておく*/
+
+				& .sp-nav-link {
+					text-decoration: none;
+				}
+				& .link-top {
+					width: 15%;
+					display: block;
+					margin: 0 auto;
+					margin-bottom: 5%;
+				}
+				& .sp-nav {
+					color: white;
+					display: block;
+					text-align: center;
+					margin-bottom: 10%;
+					font-size: 2vw;
+				}
+			}
+			/*チェックが入ったらもろもろ表示*/
+			& #nav-input:checked ~ #nav-close {
+				display: block; /*カバーを表示*/
+			}
+
+			& #nav-input:checked ~ #nav-content {
+				-webkit-transform: translateX(0%);
+				transform: translateX(0%); /*中身を表示（右へスライド）*/
+				box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+			}
+			& #nav-open span,
+			#nav-open span:before,
+			#nav-open span:after {
+				position: absolute;
+				height: 3px; /*線の太さ*/
+				width: 30px; /*長さ*/
+				border-radius: 3px;
+				background: #fff;
+				display: block;
+				content: "";
+				cursor: pointer;
+			}
+			#nav-open span:before {
+				bottom: -8px;
+			}
+			#nav-open span:after {
+				bottom: -16px;
+			}
+		}
+	}
+
+	// menu-title
+	& .menu-title {
+		color: #fff;
+		list-style-type: none;
+		position: absolute;
+		top: 36%;
+		right: 20px;
+		z-index: 9999;
+	}
+
+	& .h-image-container {
+		background-image: url(../img/home/kv-img.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		padding-top: 44.5%;
+		width: 76.4%;
+		background-position: center center;
+		@include absPosition(0, auto, auto, 0);
+		z-index: 2;
+
+		@media #{$tablet} {
+			width: 78%;
+			padding-top: 148.3%;
+			background-size: cover;
+		}
+		@media #{$smartphone} {
+			width: 76.53%;
+			padding-top: 182.1%;
+			background-size: cover;
+		}
+	}
+
+	& .h-title {
+		@include absPosition(44%, 4%, auto, auto);
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		z-index: 2;
+		font-family: "Montserrat", sans-serif;
+
+		@media #{$tablet} {
+			top: 44%;
+			right: -6%;
+		}
+		@media #{$smartphone} {
+			top: 42%;
+			right: -27%;
+		}
+
+		& .lead {
+			color: #fff;
+			font-size: 1.2vw;
+			padding-left: 2%;
+
+			@media #{$tablet} {
+				font-size: 2vw;
+				margin-bottom: 2%;
+			}
+			@media #{$smartphone} {
+				font-size: 3.7vw;
+				margin-bottom: 2%;
+			}
+		}
+		& .heading {
+			color: #fff;
+			font-size: 5vw;
+			line-height: 5.375rem;
+
+			@media #{$tablet} {
+				font-size: 8vw;
+				line-height: 1;
+				padding: 5% 0;
+			}
+			@media #{$smartphone} {
+				line-height: 1;
+				padding: 5% 0;
+				font-size: 16vw;
+			}
+		}
+	}
+
+	& .header-black-wrapper {
+		@include absPosition(0, 0, auto, auto);
+		width: 54%;
+		padding-top: 50%;
+		background-color: #222222;
+		z-index: 1;
+
+		@media #{$tablet} {
+			width: 82.2%;
+			padding-top: 162.2%;
+			background-size: cover;
+		}
+		@media #{$smartphone} {
+			width: 75.46%;
+			padding-top: 205.7%;
+			background-size: cover;
+		}
+	}
+}
+// about us
+.about-wrapper {
+	position: relative;
+	padding-top: 40.54%;
+	background-color: #fff;
+
+	@media #{$tablet} {
+		padding-top: 60.54%;
+	}
+	@media #{$smartphone} {
+		padding-top: 135.54%;
+	}
+	& .about-container {
+		@include absPosition(65%, auto, auto, 50%);
+		transform: translate(-50%, -50%);
+		width: 76.4%;
+		margin: 0 auto;
+		background-image: url(../img/home/about-img.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		padding-top: 42.2%;
+		z-index: 1;
+
+		@media #{$tablet} {
+			width: 100%;
+			background-size: cover;
+			padding-top: 62.37%;
+		}
+		@media #{$smartphone} {
+			width: 100%;
+			background-size: cover;
+			padding-top: 134.26%;
+			background-position: center;
+		}
+		& .about-content {
+			@include absPosition(50%, auto, auto, 31%);
+			transform: translate(-50%, -50%);
+			background-color: #fff;
+			padding: 5% 3%;
+			width: 53.6%;
+
+			@media #{$tablet} {
+				width: 76.8%;
+				@include absPosition(50%, auto, auto, 50%);
+			}
+			@media #{$smartphone} {
+				width: 90.4%;
+				@include absPosition(50%, auto, auto, 50%);
+				padding: 15% 4%;
+			}
+
+			& .about-title {
+				font-size: 2.5vw;
+				letter-spacing: 0.068em;
+
+				@media #{$tablet} {
+					font-size: 5vw;
+				}
+				@media #{$smartphone} {
+					font-size: 7vw;
+				}
+			}
+			& .about-lead {
+				padding: 6% 0 10%;
+				line-height: 2;
+				font-size: 0.95vw;
+
+				@media #{$tablet} {
+					font-size: 1.85vw;
+				}
+				@media #{$smartphone} {
+					font-size: 3.2vw;
+					padding: 10% 0 20%;
+				}
+			}
+			& .about-btn {
+				width: 35%;
+				height: 4vh;
+				background-color: #000;
+				color: #fff;
+				cursor: pointer;
+
+				@media #{$smartphone} {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+// works culture
+.wc-wrapper {
+	background-color: #f0f0f0;
+	position: relative;
+	padding: 10% 0 5%;
+
+	@media #{$tablet} {
+		padding: 20% 0 0;
+	}
+	@media #{$smartphone} {
+		padding: 30% 0 0;
+	}
+	& .wc-container {
+		width: 76.4%;
+		margin: 0 auto;
+
+		@media #{$tablet} {
+			width: 90.4%;
+		}
+		@media #{$smartphone} {
+			width: 90.4%;
+		}
+		& .wc-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@media #{$tablet} {
+				flex-direction: column;
+			}
+			@media #{$smartphone} {
+				flex-direction: column;
+			}
+			& .content-list {
+				width: 47%;
+				list-style-type: none;
+
+				@media #{$tablet} {
+					width: 67.7%;
+					margin-right: auto;
+					margin-bottom: 10%;
+				}
+				@media #{$smartphone} {
+					width: 100%;
+					margin-bottom: 10%;
+				}
+				& .content-title {
+					font-size: 2vw;
+					margin-bottom: 5%;
+					letter-spacing: 0.068em;
+
+					@media #{$tablet} {
+						font-size: 4vw;
+					}
+					@media #{$smartphone} {
+						font-size: 5vw;
+					}
+				}
+
+				& .content-lead {
+					padding: 5% 0;
+				}
+				& .content-btn {
+					width: 35%;
+					height: 4vh;
+					background-color: #000;
+					color: #fff;
+					cursor: pointer;
+
+					@media #{$smartphone} {
+						width: 45%;
+					}
+				}
+			}
+		}
+	}
+}
+// latest topics
+.history-wrapper {
+	padding: 5% 0;
+
+	@media #{$smartphone} {
+		padding: 10% 0;
+	}
+	& .history-container {
+		width: 76.4%;
+		margin: 0 auto;
+
+		@media #{$tablet} {
+			width: 90.4%;
+		}
+		@media #{$smartphone} {
+			width: 90.4%;
+		}
+		& .history-heading {
+			font-size: 2.5vw;
+			letter-spacing: 0.068em;
+
+			@media #{$tablet} {
+				font-size: 4vw;
+				margin-bottom: 5%;
+			}
+			@media #{$smartphone} {
+				font-size: 7vw;
+				margin-bottom: 5%;
+			}
+		}
+		& .history-news {
+			& .news-list {
+				list-style-type: none;
+				width: 63%;
+				margin-left: auto;
+				border-bottom: 1px solid #cecece;
+				margin-bottom: 3%;
+
+				@media #{$tablet} {
+					width: 100%;
+				}
+				@media #{$smartphone} {
+					width: 100%;
+					margin-bottom: 5%;
+				}
+
+				& .news-date {
+					color: #cecece;
+
+					@media #{$smartphone} {
+						font-size: 2vw;
+					}
+				}
+				& .news-link {
+					text-decoration: none;
+					color: #000;
+					padding: 2% 0;
+					display: block;
+					& .news-title {
+						font-size: 0.85vw;
+					}
+				}
+			}
+		}
+		& .history-btn-block {
+			text-align: right;
+
+			@media #{$tablet} {
+				text-align: left;
+			}
+			@media #{$smartphone} {
+				text-align: left;
+			}
+			& .history-btn {
+				width: 16%;
+				height: 4vh;
+				background-color: #000;
+				color: #fff;
+				cursor: pointer;
+
+				@media #{$tablet} {
+					width: 25%;
+				}
+				@media #{$smartphone} {
+					width: 45%;
+				}
+			}
+		}
+	}
+}
+// contact
+.contact-wrapper {
+	background-color: #f0f0f0;
+	position: relative;
+	padding: 5% 0 10%;
+	& .contact-container {
+		width: 76.4%;
+		margin: 0 auto;
+
+		@media #{$tablet} {
+			width: 90.4%;
+		}
+		@media #{$smartphone} {
+			width: 90.4%;
+		}
+		& .contact-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@media #{$tablet} {
+				flex-direction: column-reverse;
+			}
+			@media #{$smartphone} {
+				flex-direction: column-reverse;
+			}
+
+			& .content-list {
+				width: 47%;
+				list-style-type: none;
+
+				@media #{$tablet} {
+					width: 67.7%;
+					margin-right: auto;
+				}
+				@media #{$smartphone} {
+					width: 100%;
+				}
+				& .content-title {
+					font-size: 2vw;
+					letter-spacing: 0.068em;
+
+					@media #{$tablet} {
+						font-size: 4vw;
+						margin-top: 5%;
+					}
+					@media #{$smartphone} {
+						font-size: 6vw;
+						margin-top: 5%;
+					}
+				}
+				& .content-lead {
+					padding: 5% 1% 5% 0;
+					line-height: 2;
+
+					@media #{$tablet} {
+						font-size: 1.65vw;
+					}
+					@media #{$smartphone} {
+						font-size: 3.57vw;
+					}
+				}
+				& .content-btn {
+					width: 35%;
+					height: 4vh;
+					background-color: #000;
+					color: #fff;
+					cursor: pointer;
+
+					@media #{$smartphone} {
+						width: 45%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// about_pc
+.about-pc-header {
+	position: relative;
+	width: 100%;
+	padding-top: 32.5%;
+	background-color: #fff;
+
+	@media #{$tablet} {
+		padding-top: 77.5%;
+	}
+	@media #{$smartphone} {
+		padding-top: 151%;
+	}
+
+	& .about-pc-nav {
+		@include absPosition(0, auto, auto, 0);
+		z-index: 3;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 2%;
+
+		@media #{$smartphone} {
+			padding: 3%;
+		}
+
+		& .brando-logo {
+			@media #{$smartphone} {
+				width: 50%;
+			}
+		}
+		& .hamburger-link {
+			text-decoration: none;
+			& .hamburger-menu {
+				// menu-icon
+
+				// menu-title
+				& .menu-title {
+					color: #fff;
+				}
+			}
+		}
+	}
+	& .about-image {
+		@include absPosition(0, auto, auto, 0);
+		width: 76.39%;
+		z-index: 2;
+
+		@media #{$tablet} {
+			padding-top: 69%;
+		}
+		@media #{$smartphone} {
+			padding-top: 134.84%;
+		}
+		& .about-top-image {
+			@media #{$tablet} {
+				@include absPosition(0, auto, auto, 0);
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			@media #{$smartphone} {
+				@include absPosition(0, auto, auto, 0);
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	& .about-pc-title {
+		@include absPosition(44%, 0, auto, auto);
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		z-index: 4;
+		font-family: "Montserrat", sans-serif;
+
+		@media #{$tablet} {
+			top: 45%;
+			right: -10%;
+		}
+		@media #{$smartphone} {
+			top: 35%;
+			right: -27%;
+		}
+
+		& .lead {
+			color: #fff;
+			font-size: 1.2vw;
+			padding-left: 2%;
+
+			@media #{$tablet} {
+				font-size: 2vw;
+				margin-bottom: 2%;
+			}
+			@media #{$smartphone} {
+				font-size: 3vw;
+			}
+		}
+		& .heading {
+			color: #fff;
+			font-size: 5vw;
+			line-height: 5.375rem;
+
+			@media #{$tablet} {
+				font-size: 8vw;
+				line-height: 1;
+				padding: 5% 0;
+			}
+			@media #{$smartphone} {
+				font-size: 13vw;
+			}
+		}
+	}
+
+	& .header-black-wrapper {
+		@include absPosition(0, 0, auto, auto);
+		width: 54.17%;
+		padding-top: 32.49%;
+		background-color: #222222;
+		z-index: 1;
+
+		@media #{$tablet} {
+			width: 52.9%;
+			padding-top: 77.2%;
+		}
+		@media #{$smartphone} {
+			width: 52.9%;
+			padding-top: 150.76%;
+		}
+	}
+}
+// main
+.main-container {
+	max-width: 76.38%;
+	margin: 0 auto;
+
+	@media #{$tablet} {
+		max-width: 90.4%;
+	}
+	@media #{$smartphone} {
+		max-width: 90.4%;
+	}
+
+	// vision
+	& .vision-container {
+		padding: 10% 0 10% 20%;
+
+		@media #{$smartphone} {
+			padding: 20% 0;
+		}
+		& .vision-heading {
+			font-size: 2.5vw;
+			margin-bottom: 3%;
+
+			@media #{$tablet} {
+				font-size: 3vw;
+			}
+			@media #{$smartphone} {
+				font-size: 7vw;
+				margin-bottom: 10%;
+			}
+		}
+		& .vision-lead {
+			font-size: 1.5vw;
+			margin-bottom: 3%;
+
+			@media #{$tablet} {
+				font-size: 2.5vw;
+			}
+			@media #{$smartphone} {
+				font-size: 5.5vw;
+				font-weight: normal;
+				margin-bottom: 10%;
+			}
+		}
+		& .vision-content {
+			line-height: 2;
+			font-size: 1vw;
+			margin-bottom: 3%;
+
+			@media #{$tablet} {
+				margin-bottom: 5%;
+			}
+			@media #{$smartphone} {
+				margin-bottom: 10%;
+				font-size: 3vw;
+			}
+		}
+	}
+	// image
+	& .ceo-container {
+		position: relative;
+		padding-top: 80%;
+
+		@media #{$tablet} {
+			padding-top: 105%;
+		}
+		@media #{$smartphone} {
+			padding-top: 260%;
+		}
+		& .main-image {
+			width: 38.18%;
+			display: inline-block;
+			@include absPosition(0, auto, auto, 0);
+
+			@media #{$smartphone} {
+				width: 100%;
+				left: -6%;
+			}
+		}
+		// ceo message
+		& .message-wrapper {
+			@include absPosition(17%, auto, auto, 30%);
+			z-index: -1;
+			background-color: #f0f0f0;
+			display: inline-block;
+			padding: 11% 15% 6%;
+
+			@media #{$tablet} {
+				padding: 13% 5% 5%;
+				top: 15%;
+				left: 25%;
+			}
+			@media #{$smartphone} {
+				padding: 35% 8% 30%;
+				top: 16%;
+				left: 0;
+				width: 100%;
+			}
+			& .message-heading {
+				font-size: 2.5vw;
+				margin-bottom: 3%;
+				letter-spacing: 0.068em;
+
+				@media #{$tablet} {
+					font-size: 4vw;
+				}
+				@media #{$smartphone} {
+					font-size: 8.5vw;
+					margin-bottom: 10%;
+				}
+			}
+			& .message-content {
+				line-height: 2;
+				font-size: 1vw;
+				margin-bottom: 5%;
+
+				@media #{$tablet} {
+					font-size: 1.8vw;
+				}
+				@media #{$smartphone} {
+					font-size: 3vw;
+					margin-bottom: 10%;
+				}
+			}
+		}
+	}
+	// company
+	.company-container {
+		& .company-heading {
+			font-size: 2.5vw;
+			padding-bottom: 3%;
+			border-bottom: 1px solid #cecece;
+
+			@media #{$tablet} {
+				font-size: 3.5vw;
+			}
+			@media #{$smartphone} {
+				font-size: 8vw;
+				letter-spacing: 0.068em;
+				padding-bottom: 5%;
+			}
+		}
+		& .company-info {
+			margin-left: auto;
+			width: 75%;
+
+			@media #{$tablet} {
+				width: 98%;
+			}
+			@media #{$smartphone} {
+				width: 100%;
+			}
+			& .table-list {
+				width: 75%;
+				height: 4vw;
+				line-height: 4vw;
+				border-bottom: 1px solid #cecece;
+
+				@media #{$tablet} {
+					height: 6vw;
+					line-height: 6vw;
+				}
+				@media #{$smartphone} {
+					height: 12vw;
+					line-height: 12vw;
+					font-size: 3vw;
+				}
+				& .table-title {
+					width: 20%;
+
+					@media #{$smartphone} {
+						width: 45%;
+					}
+				}
+			}
+		}
+		& .company-map {
+			position: relative;
+			width: 100%;
+			height: 0;
+			padding-top: 32.7%;
+			margin: 3% 0 10%;
+
+			@media #{$smartphone} {
+				padding-top: 136%;
+				margin: 10% 0 20%;
+			}
+			& .iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+// contact pc
+.contact-pc-header {
+	position: relative;
+	width: 100%;
+	padding-top: 32.5%;
+	background-color: #fff;
+
+	@media #{$tablet} {
+		padding-top: 77.5%;
+	}
+	@media #{$smartphone} {
+		padding-top: 95.5%;
+	}
+
+	& .contact-pc-nav {
+		@include absPosition(0, auto, auto, 0);
+		z-index: 3;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		padding: 2%;
+
+		@media #{$smartphone} {
+			padding: 3%;
+		}
+
+		& .brando-logo {
+			@media #{$smartphone} {
+				width: 50%;
+			}
+		}
+		& .hamburger-link {
+			text-decoration: none;
+			& .hamburger-menu {
+				// menu-icon
+
+				// menu-title
+				& .menu-title {
+					color: #fff;
+				}
+			}
+		}
+	}
+	& .contact-image {
+		@include absPosition(0, auto, auto, 0);
+		width: 76.39%;
+		z-index: 2;
+
+		@media #{$tablet} {
+			padding-top: 69%;
+			display: inline-block;
+			background-color: #000;
+		}
+		@media #{$smartphone} {
+			padding-top: 72%;
+			display: inline-block;
+			background-color: #000;
+		}
+		& .contact-top-image {
+			@media #{$tablet} {
+				@include absPosition(0, auto, auto, 0);
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				opacity: 0.5;
+				display: block;
+			}
+			@media #{$smartphone} {
+				@include absPosition(0, auto, auto, 0);
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				opacity: 0.5;
+				display: block;
+			}
+		}
+	}
+
+	& .contact-pc-title {
+		@include absPosition(44%, 0, auto, auto);
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		z-index: 4;
+		font-family: "Montserrat", sans-serif;
+
+		@media #{$tablet} {
+			top: 27%;
+			right: -10%;
+		}
+		@media #{$smartphone} {
+			top: 45%;
+			right: -27%;
+		}
+
+		& .lead {
+			color: #fff;
+			font-size: 1.2vw;
+			padding-left: 2%;
+
+			@media #{$tablet} {
+				font-size: 2vw;
+				margin-bottom: 2%;
+			}
+			@media #{$smartphone} {
+				font-size: 3vw;
+				text-align: right;
+			}
+		}
+		& .heading {
+			color: #fff;
+			font-size: 5vw;
+			line-height: 5.375rem;
+
+			@media #{$tablet} {
+				font-size: 8vw;
+				line-height: 1;
+				padding: 5% 0;
+			}
+			@media #{$smartphone} {
+				font-size: 13vw;
+				letter-spacing: 0.063em;
+			}
+		}
+	}
+	& .scroll {
+		@media #{$pc} {
+			display: none;
+		}
+		@media #{$tablet} {
+			display: none;
+		}
+		@media #{$smartphone} {
+			@include absPosition(auto, auto, 0, 2%);
+			width: 4%;
+			z-index: 4;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			& .scroll-line {
+				width: 1vw;
+				height: 18vh;
+
+				& .scroll-line-black {
+					display: inline-block;
+					height: 4.5vh;
+					width: 0.5vw;
+					background-color: #000;
+				}
+				& .scroll-line-white {
+					display: inline-block;
+					width: 0.5vw;
+					height: 22vw;
+					background-color: #fff;
+				}
+			}
+		}
+	}
+
+	& .header-black-wrapper {
+		@include absPosition(0, 0, auto, auto);
+		width: 54.17%;
+		padding-top: 32.49%;
+		background-color: #222222;
+		z-index: 1;
+
+		@media #{$tablet} {
+			width: 52.9%;
+			padding-top: 77.2%;
+		}
+		@media #{$smartphone} {
+			width: 52.9%;
+			padding-top: 95.76%;
+		}
+	}
+}
+
+.contact-form {
+	& .c-f-container {
+		width: 48.6%;
+		margin: 10% auto 6%;
+
+		@media #{$tablet} {
+			width: 90.5%;
+			margin: 20% auto;
+		}
+		@media #{$smartphone} {
+			width: 90.5%;
+			margin: 20% auto;
+		}
+
+		& .form-contact {
+			font-size: 0.92vw;
+			line-height: 1.5;
+			margin-bottom: 5%;
+
+			@media #{$tablet} {
+				font-size: 1.8vw;
+			}
+			@media #{$smartphone} {
+				font-size: 3.1vw;
+				line-height: 1.5;
+			}
+		}
+		& .c-p-f-title {
+			text-align: left;
+			font-family: "Roboto", sans-serif;
+			display: inline;
+			font-size: 1.2vw;
+
+			@media #{$tablet} {
+				font-size: 2vw;
+			}
+			@media #{$smartphone} {
+				font-size: 4vw;
+			}
+		}
+		& .label {
+			font-size: 1.2vw;
+
+			@media #{$tablet} {
+				font-size: 2vw;
+			}
+			@media #{$smartphone} {
+				font-size: 4vw;
+			}
+		}
+		& .note {
+			background-color: #000;
+			color: #fff;
+			margin-left: 2%;
+			font-size: 1.2vw;
+			padding: 0.1% 0.5%;
+
+			@media #{$tablet} {
+				font-size: 2vw;
+			}
+			@media #{$smartphone} {
+				font-size: 4vw;
+			}
+		}
+
+		& .radio-group {
+			padding: 3% 0 5%;
+			text-align: left;
+
+			& .radio-block {
+				display: inline;
+
+				@media #{$smartphone} {
+					display: block;
+				}
+			}
+			& .radio-btn {
+				margin-right: 2%;
+				width: 20px;
+				height: 20px;
+				top: -3px;
+				position: relative;
+				margin-left: 5%;
+				@media #{$smartphone} {
+					display: inline;
+					margin-bottom: 3%;
+					margin-left: 2%;
+					top: 2px;
+				}
+			}
+			& .first-btn {
+				margin-left: 2%;
+			}
+		}
+		& .check-box {
+			padding: 2% 0 5%;
+			text-align: center;
+			@media #{$smartphone} {
+				padding: 5% 0 10%;
+				font-size: 3.5vw;
+			}
+		}
+		& .input {
+			width: 100%;
+			height: 3vw;
+			margin: 1.5% 0 5%;
+
+			@media #{$tablet} {
+				height: 5vw;
+			}
+			@media #{$smartphone} {
+				height: 8vw;
+				margin: 4% 0 8%;
+			}
+		}
+		& .privacy {
+			font-weight: bold;
+		}
+		& .textarea {
+			width: 100%;
+			margin-top: 1%;
+			margin-bottom: 5%;
+			@media #{$smartphone} {
+				margin: 4% 0 8%;
+			}
+		}
+		& .form-btn-block {
+			margin: 0 auto;
+			text-align: center;
+			font-size: 1.5vw;
+
+			& .form-btn {
+				width: 25%;
+				background-color: #000;
+				color: #fff;
+
+				@media #{$smartphone} {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+// footer
+.footer {
+	background-color: #525252;
+	color: #fff;
+	text-align: center;
+	height: 5vw;
+	line-height: 5vw;
+
+	@media #{$tablet} {
+		height: 8vw;
+		line-height: 8vw;
+	}
+	@media #{$smartphone} {
+		height: 10vw;
+		line-height: 10vw;
+		font-size: 2vw;
+	}
+}
